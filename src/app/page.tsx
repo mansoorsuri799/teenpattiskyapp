@@ -1,280 +1,235 @@
 import Image from "next/image";
-import Link from 'next/link';
-import { Metadata } from 'next';
-import { imageObjectLicensing } from '@/lib/schemaImageLicensing';
-import { APP_AGGREGATE_RATING, APP_DOWNLOAD_URL, APP_SCREENSHOTS, FACEBOOK_PROFILE_URL } from '@/lib/appFacts';
-import CtaButton from '@/components/CtaButton';
+import Link from "next/link";
+import type { Metadata } from "next";
+import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
+import {
+  APP_AGGREGATE_RATING,
+  APP_DETAILS,
+  APP_DOWNLOAD_URL,
+  APP_SCREENSHOTS,
+  FACEBOOK_PROFILE_URL,
+  SUPPORT_EMAIL,
+} from "@/lib/appFacts";
+import CtaButton from "@/components/CtaButton";
 
-// This additional metadata enhances the page-specific SEO
 export const metadata: Metadata = {
   title: {
-    default: "Card Rummy Pakistan v1.231 Free Download Official APK",
-    template: "%s | Card Rummy"
+    absolute: "3 Patti Sky APK v2.5.0 Pakistan – Free Android Download 2026",
   },
-  description: "Card Rummy 2026 - Pakistan's #1 card game platform. Download Card Rummy APK, play Teen Patti, Rummy, Dragon vs Tiger & win real cash. Fast withdrawals via JazzCash & EasyPaisa. Join 500K+ players!",
-  keywords: [
-    "Card Rummy",
-    "card rummy game",
-    "card rummy download",
-    "card rummy app",
-    "card rummy apk",
-    "card rummy pakistan",
-    "card rummy online",
-    "download card rummy",
-    "card rummy real money",
-    "3 Patti Card Rummy",
-    "how to play card rummy",
-    "card rummy 2026",
-    "Pakistan card games",
-    "Teen Patti game",
-    "online rummy game",
-    "earn money playing cards",
-    "Android gaming app 2026",
-    "JazzCash gaming",
-    "EasyPaisa gaming",
-    "mobile card games",
-    "real money games Pakistan",
-    "card game earning app",
-    "Teen Patti online",
-    "Dragon vs Tiger",
-    "best earning app Pakistan",
-    "rummy card game",
-    "play rummy online",
-    "rummy game download"
-  ],
+  description:
+    "Download 3 Patti Sky (Teen Patti Sky) APK v2.5.0 for Android in Pakistan. JazzCash & EasyPaisa, daily bonuses, referral agent rewards, Roulette, Mines, Dragon Tiger & more.",
   openGraph: {
-    title: 'Card Rummy Pakistan v1.231 Free Download Official APK',
-    description: 'Card Rummy 2026 - Pakistan\'s #1 card game platform. Join 500K+ players. Play Teen Patti, Rummy & more. Earn real money with JazzCash & EasyPaisa. Download now!',
+    title: "3 Patti Sky APK v2.5.0 Pakistan – Free Android Download 2026",
+    description:
+      "Official Teen Patti Sky / 3 Patti Sky guide: install APK, claim bonuses, deposit & withdraw with JazzCash and EasyPaisa.",
+    url: "https://teenpattiskyapp.com.pk",
+    siteName: "Teen Patti Sky",
     images: [
       {
-        url: 'https://cardrummyapp.com.pk/card-rummy.webp',
+        url: "https://teenpattiskyapp.com.pk/teen-patti-sky.webp",
         width: 512,
         height: 512,
-        alt: 'Card Rummy - Pakistan\'s #1 card game app. Play Teen Patti, Rummy, Dragon vs Tiger.'
+        alt: "3 Patti Sky official app icon",
       },
       {
-        url: 'https://cardrummyapp.com.pk/feature/og-image.webp',
-        width: 512,
-        height: 512,
-        alt: 'Card Rummy - Premier Card Gaming Platform'
+        url: "https://teenpattiskyapp.com.pk/feature/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "3 Patti Sky APK download for Pakistan",
       },
-      {
-        url: 'https://cardrummyapp.com.pk/feature/og-image-square.webp',
-        width: 512,
-        height: 512,
-        alt: 'Card Rummy - Premier Card Gaming Platform'
-      }
     ],
-    type: 'website'
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Card Rummy Pakistan v1.231 Free Download Official APK',
-    description: 'Card Rummy 2026 - Pakistan\'s #1 card game platform. Join 500K+ players. Play Teen Patti, Rummy & more. Earn real money with JazzCash & EasyPaisa. Download now!',
-    images: ['https://cardrummyapp.com.pk/card-rummy.webp', 'https://cardrummyapp.com.pk/feature/og-image.webp']
+    card: "summary_large_image",
+    title: "3 Patti Sky APK v2.5.0 Pakistan – Free Android Download 2026",
+    description:
+      "Install Teen Patti Sky on Android. Live tables, VIP rooms, JazzCash & EasyPaisa cashouts.",
+    images: ["https://teenpattiskyapp.com.pk/feature/twitter-card.webp"],
   },
-  alternates: {
-    canonical: 'https://cardrummyapp.com.pk',
-  },
+  alternates: { canonical: "https://teenpattiskyapp.com.pk" },
 };
 
+const toc = [
+  { id: "what-is", label: "What is 3 Patti Sky?" },
+  { id: "overview", label: "APK Overview" },
+  { id: "why-choose", label: "Why Choose It" },
+  { id: "rewards", label: "Rewards & Bonuses" },
+  { id: "agent", label: "Agent / Referral" },
+  { id: "features", label: "Key Features" },
+  { id: "games", label: "Games Available" },
+  { id: "requirements", label: "System Requirements" },
+  { id: "download", label: "Download & Install" },
+  { id: "ios", label: "iPhone / iOS" },
+  { id: "pc", label: "PC Version" },
+  { id: "register", label: "Register" },
+  { id: "login", label: "Login & Password" },
+  { id: "whats-new", label: "What's New v2.5.0" },
+  { id: "payments", label: "Deposit & Withdraw" },
+  { id: "compare", label: "vs Other Apps" },
+  { id: "safety", label: "Safe, Legal & Legit" },
+  { id: "support", label: "Customer Support" },
+  { id: "pros-cons", label: "Pros & Cons" },
+  { id: "faq", label: "FAQs" },
+];
+
+const apkRows: [string, string][] = [
+  ["App Name", "3 Patti Sky (Teen Patti Sky)"],
+  ["Version", APP_DETAILS.version],
+  ["Category", APP_DETAILS.category],
+  ["App Size", APP_DETAILS.size],
+  ["Android Required", APP_DETAILS.android],
+  ["Game Mode", APP_DETAILS.mode],
+  ["Language", APP_DETAILS.language],
+  ["Price", APP_DETAILS.price],
+  ["Platform", APP_DETAILS.platform],
+  ["Update Status", APP_DETAILS.updateStatus],
+];
+
+const agentTiers = [
+  ["5", "3,000"],
+  ["10", "6,500"],
+  ["30", "18,500"],
+  ["50", "31,000"],
+  ["100", "62,000"],
+  ["300", "186,000"],
+  ["500", "310,000"],
+  ["1,000", "620,000"],
+  ["2,000", "1,250,000"],
+  ["10,000", "6,250,000"],
+];
+
+const games = [
+  { name: "Royal Patti", desc: "Premium tables with higher stakes and a royal theme." },
+  { name: "Golden Joker", desc: "Gold jokers that boost winning combinations." },
+  { name: "Low Card Battle", desc: "Muflis-style play focused on smart low hands." },
+  { name: "Power Ace Mode", desc: "Aces act as wildcards for flexible wins." },
+  { name: "Lucky Draw Mode", desc: "A random wildcard each round keeps pots unpredictable." },
+  { name: "Pro Player Table", desc: "Competitive rooms for experienced players." },
+  { name: "Diamond Patti", desc: "Deluxe chips and elite-table energy." },
+  { name: "Dragon Tiger", desc: "Fast two-side card rounds." },
+  { name: "Mines", desc: "Quick risk-and-reward grid rounds." },
+  { name: "Zoo Roulette", desc: "Colorful roulette-style spins." },
+  { name: "BlackJack", desc: "Classic 21 alongside Teen Patti lobbies." },
+  { name: "Ludo & more", desc: "Extra casual modes for short sessions." },
+];
+
+const faqs = [
+  {
+    q: "What is 3 Patti Sky?",
+    a: "3 Patti Sky (also called Teen Patti Sky) is an Android gaming app popular in Pakistan. It mixes classic Teen Patti with modes like Roulette, Mines, Dragon Tiger, Ludo, and more, plus JazzCash and EasyPaisa wallet support.",
+  },
+  {
+    q: "How can I download the 3 Patti Sky app?",
+    a: "Open teenpattiskyapp.com.pk, tap Download, allow the one-time unknown-sources prompt if Android asks, then install the APK and register with your mobile number. Full steps are in the download section below and on our dedicated download page.",
+  },
+  {
+    q: "Is 3 Patti Sky safe to use?",
+    a: "Use a single trusted download path, bind your account, start with a small deposit/withdrawal test, and never share OTPs. The app includes OTP login and encrypted wallet flows; your habits matter as much as the software.",
+  },
+  {
+    q: "How do I deposit money into my 3 Patti Sky account?",
+    a: "Open Wallet → Deposit, choose JazzCash, EasyPaisa, or bank transfer, enter the PKR amount, and confirm. See our full deposit guide for screenshots and troubleshooting.",
+  },
+  {
+    q: "Can I earn money by inviting friends to 3 Patti Sky?",
+    a: "Yes. The referral and agent program pays commissions and milestone bonuses when invited players stay active. Always read the live in-app terms — rates can change.",
+  },
+  {
+    q: "How long does it take to withdraw winnings from 3 Patti Sky?",
+    a: "Verified JazzCash or EasyPaisa requests often clear within minutes to a few hours after checks. Bound wallets and matching account details speed things up.",
+  },
+];
+
+function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
+  return (
+    <h2 id={id} className="section-anchor font-display text-2xl md:text-3xl font-extrabold text-cream">
+      {children}
+    </h2>
+  );
+}
+
 export default function Home() {
-  // Schema.org structured data for SEO
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://cardrummyapp.com.pk/#website",
-        "url": "https://cardrummyapp.com.pk/",
-        "name": "Card Rummy",
-        "description": "Pakistan's premier card game platform with Teen Patti, Rummy, Dragon Tiger and more",
-        "inLanguage": "en-US"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://cardrummyapp.com.pk/#webpage",
-        "url": "https://cardrummyapp.com.pk/",
-        "name": "Card Rummy Pakistan v1.231 Free Download Official APK",
-        "description": "Card Rummy 2026 - Pakistan's #1 card game platform. Download Card Rummy APK, play Teen Patti, Rummy, Dragon vs Tiger & win real cash.",
-        "isPartOf": { "@id": "https://cardrummyapp.com.pk/#website" },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": [
-            "#what-is-card-rummy",
-            "#why-card-rummy-popular",
-            "#how-to-start",
-            "#download",
-            "#card-rummy-features",
-            "#card-rummy-games",
-            "#card-rummy-bonuses",
-            "#register-login",
-            "#deposit-withdraw",
-            "#safety-security",
-            "#faq"
-          ]
-        },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://cardrummyapp.com.pk/card-rummy.webp",
-          "width": 512,
-          "height": 512,
-          "name": "Card Rummy",
-          "description": "Card Rummy - Pakistan's #1 card game app. Official brand image. Play Teen Patti, Rummy, Dragon vs Tiger. Download Card Rummy APK for Android.",
-          ...imageObjectLicensing
-        }
-      },
-      {
-        "@type": "ImageObject",
-        "@id": "https://cardrummyapp.com.pk/card-rummy.webp#primary",
-        "url": "https://cardrummyapp.com.pk/card-rummy.webp",
-        "contentUrl": "https://cardrummyapp.com.pk/card-rummy.webp",
-        "name": "Card Rummy",
-        "description": "Card Rummy - Pakistan's premier card game app. Official Card Rummy brand image with playing cards. Play Teen Patti, Rummy, Dragon vs Tiger and win real cash. Download Card Rummy APK.",
-        "width": 512,
-        "height": 512,
-        ...imageObjectLicensing
+        "@id": "https://teenpattiskyapp.com.pk/#website",
+        url: "https://teenpattiskyapp.com.pk/",
+        name: "Teen Patti Sky",
+        alternateName: "3 Patti Sky",
+        description:
+          "3 Patti Sky / Teen Patti Sky APK guides for Pakistani players — download, bonuses, JazzCash & EasyPaisa.",
+        inLanguage: "en-PK",
       },
       {
         "@type": "Organization",
-        "@id": "https://cardrummyapp.com.pk/#organization",
-        "name": "Card Rummy",
-        "url": "https://cardrummyapp.com.pk/",
-        "logo": {
+        "@id": "https://teenpattiskyapp.com.pk/#organization",
+        name: "Teen Patti Sky",
+        url: "https://teenpattiskyapp.com.pk/",
+        logo: {
           "@type": "ImageObject",
-          "url": "https://cardrummyapp.com.pk/card-rummy.webp",
-          "width": 512,
-          "height": 512,
+          url: "https://teenpattiskyapp.com.pk/teen-patti-sky.webp",
+          width: 512,
+          height: 512,
           ...imageObjectLicensing,
-          "creditText": "Card Rummy logo"
         },
-        "sameAs": [
-          FACEBOOK_PROFILE_URL
-        ],
-        "contactPoint": {
+        sameAs: [FACEBOOK_PROFILE_URL],
+        contactPoint: {
           "@type": "ContactPoint",
-          "email": "support@cardrummyapp.com.pk",
-          "contactType": "Customer Support",
-          "areaServed": "PK"
-        }
+          email: SUPPORT_EMAIL,
+          contactType: "Customer Support",
+          areaServed: "PK",
+        },
       },
       {
         "@type": "SoftwareApplication",
-        "name": "Card Rummy",
-        "operatingSystem": "Android 5.0+",
-        "applicationCategory": "GameApplication",
-        "image": "https://cardrummyapp.com.pk/card-rummy.webp",
-        "logo": "https://cardrummyapp.com.pk/card-rummy.webp",
-        "aggregateRating": APP_AGGREGATE_RATING,
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "PKR"
-        },
-        "downloadUrl": APP_DOWNLOAD_URL,
-        "softwareVersion": "V1.231",
-        "fileSize": "49MB",
-        "description": "Card Rummy is Pakistan's most popular online card gaming app where players earn real money by playing Teen Patti, Rummy, Dragon vs Tiger, Andar Bahar, and more. It supports fast deposits and withdrawals via JazzCash and EasyPaisa, offers daily bonuses and VIP rewards, and has over 500,000 active players across Pakistan.",
-        "screenshot": [...APP_SCREENSHOTS],
-        "author": {
-          "@type": "Organization",
-          "name": "Card Rummy"
-        }
+        name: "3 Patti Sky",
+        alternateName: "Teen Patti Sky",
+        operatingSystem: "Android",
+        applicationCategory: "GameApplication",
+        softwareVersion: APP_DETAILS.version,
+        fileSize: APP_DETAILS.size,
+        image: "https://teenpattiskyapp.com.pk/teen-patti-sky.webp",
+        aggregateRating: APP_AGGREGATE_RATING,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "PKR" },
+        downloadUrl: APP_DOWNLOAD_URL,
+        description:
+          "3 Patti Sky is an Android Teen Patti and casino-style game app for Pakistan with JazzCash, EasyPaisa, daily bonuses, VIP tables, and multiplayer modes.",
+        screenshot: [...APP_SCREENSHOTS],
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+      {
+        "@type": "HowTo",
+        name: "How to download and install 3 Patti Sky APK on Android",
+        totalTime: "PT5M",
+        step: [
           {
-            "@type": "Question",
-            "name": "What is Card Rummy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Card Rummy is Pakistan's premier online card game platform where you can play Teen Patti, Rummy, Dragon vs Tiger, and many other exciting casino games. Card Rummy offers real cash rewards with fast withdrawals via JazzCash and EasyPaisa."
-            }
+            "@type": "HowToStep",
+            name: "Open the download page",
+            text: "Visit teenpattiskyapp.com.pk and tap Download 3 Patti Sky Game.",
           },
           {
-            "@type": "Question",
-            "name": "How to download Card Rummy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can download Card Rummy APK from the official website cardrummyapp.com.pk. The app is available for Android devices and can be installed directly by downloading the APK file."
-            }
+            "@type": "HowToStep",
+            name: "Allow install",
+            text: "Allow installs from your browser when Android asks for unknown sources.",
           },
           {
-            "@type": "Question",
-            "name": "How to download Card Rummy app for Android?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "To download the Card Rummy app for Android, visit cardrummyapp.com.pk, click the download button, enable Unknown Sources in your settings, and install the APK file. The Card Rummy game is free to download and works on Android 5.0 or higher."
-            }
+            "@type": "HowToStep",
+            name: "Install and register",
+            text: "Open the APK, install, then register with your mobile number and OTP.",
           },
-          {
-            "@type": "Question",
-            "name": "Is Card Rummy safe and legal?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, Card Rummy is safe to use with secure data protection. The platform uses encrypted transactions and protects user privacy. However, legality depends on local laws, so always check your region's regulations."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to earn money on Card Rummy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can earn money on Card Rummy by playing games like Teen Patti, Rummy, and Dragon vs Tiger. The platform offers welcome bonuses, daily rewards, referral commissions, and deposit bonuses to help you start earning."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How to withdraw money from Card Rummy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can withdraw money from Card Rummy using JazzCash or EasyPaisa. Go to the Wallet section, click Withdrawal, choose your payment method, enter the amount and account details, then confirm. Withdrawals are processed quickly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What games are available on Card Rummy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Card Rummy offers multiple games including Teen Patti, Classic Rummy, Dragon vs Tiger, Andar Bahar, Poker, and various slot games. All games are available 24/7 with real cash prizes."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long do Card Rummy withdrawals take?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Card Rummy withdrawals through JazzCash and EasyPaisa are processed within 5-30 minutes. The platform offers fast, secure withdrawals with no hidden fees."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the minimum withdrawal on Card Rummy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The minimum withdrawal amount on Card Rummy depends on your payment method. Generally, you can withdraw as low as PKR 500 via JazzCash or EasyPaisa."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do I contact Card Rummy customer support?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can contact Card Rummy customer support via 24/7 live chat within the app, email at support@cardrummyapp.com.pk, or through WhatsApp. Support team responds quickly to all queries."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What bonuses does Card Rummy offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Card Rummy offers welcome bonuses for new users, daily login bonuses, deposit bonuses, referral bonuses, and recharge rebates. Special VIP bonuses are available for high-volume players."
-            }
-          }
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   };
 
   return (
@@ -283,990 +238,581 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      
-      {/* Hero Section with improved spacing */}
-      <section className="py-8 md:py-16 px-4 md:px-8 max-w-7xl mx-auto" style={{ minHeight: '400px' }}>
-        <div className="md:flex md:items-start md:justify-between md:space-x-12 lg:space-x-20">
-          <div className="md:w-1/2 space-y-6">
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                <span className="text-white">Card Rummy</span>
+
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(240,193,75,0.18),_transparent_55%)]" />
+        <div className="max-w-7xl mx-auto px-4 md:px-8 pt-10 md:pt-14 pb-12 md:pb-16 relative">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
+            <div>
+              <div className="flex flex-wrap gap-2 mb-5">
+                <span className="sky-chip">v2.5.0 · 2026</span>
+                <span className="sky-chip">Pakistan</span>
+                <span className="sky-chip">JazzCash · EasyPaisa</span>
+              </div>
+              <p className="font-display text-gold text-sm font-bold tracking-[0.2em] uppercase mb-3">
+                Teen Patti Sky · 3 Patti Sky
+              </p>
+              <h1 className="font-display text-3xl sm:text-4xl lg:text-[2.85rem] font-extrabold leading-[1.12] text-cream mb-5">
+                Teen Patti Sky Game Download Latest Version For Android 2026
               </h1>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
-                <span className="text-[#FFA500]">Download APK & Play</span>{' '}
-                <span className="text-white">Real Money Games in Pakistan 2026</span>
-              </h2>
-            </div>
-            
-            <p className="text-lg text-gray-300 leading-relaxed" style={{ contain: 'layout style', minHeight: '120px', display: 'block' }}>
-              <Link href="/" className="text-accent hover:underline">Card Rummy</Link> is Pakistan's premier online card game platform, where you can play more than 30+ exciting casino games. Card Rummy offers the best card gaming experience with attractive graphics, smooth gameplay, and real cash rewards. So download now, start playing, and win real money with fast withdrawals via JazzCash and Easy Paisa.
-            </p>
-
-            {/* Download Button */}
-            <div className="flex justify-center my-8">
-              <CtaButton>DOWNLOAD NOW</CtaButton>
-            </div>
-
-            {/* Stats Grid with improved spacing */}
-            <div className="flex flex-row gap-4 justify-center mt-8 mb-4" style={{ minHeight: '120px' }}>
-              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]" style={{ minHeight: '120px' }}>
-                <svg className="w-6 h-6 mb-3 text-[#FFA500] mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                </svg>
-                <div className="text-white text-2xl font-bold mb-1">500K+</div>
-                <div className="text-gray-400 text-sm">Downloads</div>
+              <p className="text-lg text-cream/80 leading-relaxed max-w-2xl mb-6">
+                3 Patti Sky, also known as Teen Patti Sky, is a popular card game in Pakistan. Enjoy exciting games like
+                Roulette, Mines, and Dragon Tiger with smooth gameplay and beautiful graphics. It also offers easy payment
+                options through JazzCash and EasyPaisa, along with 24/7 customer support.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 mb-6">
+                <CtaButton ariaLabel="Download 3 Patti Sky Game">Download 3 Patti Sky Game</CtaButton>
+                <Link
+                  href="/download-teen-patti-sky"
+                  className="text-gold font-semibold underline underline-offset-4 hover:text-ember"
+                >
+                  Full install guide →
+                </Link>
               </div>
-              
-              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]" style={{ minHeight: '120px' }}>
-                <svg className="w-6 h-6 mb-3 text-[#FFA500] mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                  <path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/>
-                </svg>
-                <div className="text-white text-2xl font-bold mb-1">200K+</div>
-                <div className="text-gray-400 text-sm">Ratings</div>
-              </div>
-              
-              <div className="bg-[#0A1029] p-6 rounded-2xl text-center flex-1 max-w-[180px]" style={{ minHeight: '120px' }}>
-                <svg className="w-6 h-6 mb-3 text-[#FFA500] mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                  <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                </svg>
-                <div className="text-white text-2xl font-bold mb-1">49MB</div>
-                <div className="text-gray-400 text-sm">App Size</div>
+              <div className="flex flex-wrap items-center gap-3 text-sm text-cream/75" aria-label="App rating">
+                <span className="text-gold text-lg tracking-tight" aria-hidden="true">
+                  ★★★★☆
+                </span>
+                <span>
+                  <strong className="text-cream">4.5</strong> · 200,000 ratings · Free · Android · Game
+                </span>
               </div>
             </div>
 
-            {/* Android only notice */}
-            <p className="text-gray-400 text-sm text-center italic">*Available for Android devices only</p>
-          </div>
-
-          {/* Hero Image – single component, responsive sizing via CSS */}
-          <figure
-            className="mt-8 md:mt-0 md:w-1/2 flex justify-center md:justify-end"
-            itemScope
-            itemType="https://schema.org/ImageObject"
-          >
-            <meta itemProp="name" content="Card Rummy" />
-            <meta itemProp="description" content="Card Rummy - Pakistan's #1 card game app. Play Teen Patti, Rummy, Dragon vs Tiger. Download Card Rummy APK for Android." />
-            <meta itemProp="url" content="https://cardrummyapp.com.pk/card-rummy.webp" />
-            <Image
-              src="/card-rummy.webp"
-              alt="Card Rummy – Pakistan's #1 Card Game App"
-              title="Card Rummy – Download & Play Teen Patti, Rummy, Dragon vs Tiger"
-              width={320}
-              height={320}
-              className="object-contain drop-shadow-2xl w-[260px] h-[260px] md:w-[320px] md:h-[320px]"
-              priority={true}
-              fetchPriority="high"
-              quality={80}
-              sizes="(max-width: 768px) 260px, 320px"
-              itemProp="image"
-            />
-            <figcaption className="sr-only">Card Rummy – Pakistan&apos;s #1 card game app. Download the APK and play Teen Patti, Rummy, Dragon vs Tiger. Win real cash via JazzCash &amp; EasyPaisa.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      {/* App Specifications Table with improved spacing */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto" id="download">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-[#FFA500]">Download Info Table</h2>
-        <div className="overflow-hidden rounded-2xl shadow-2xl border border-gray-800">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-800">
-              <tbody className="divide-y divide-gray-800">
-                <tr className="bg-[#0a1029]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">App Name</td>
-                  <td className="py-4 px-6 text-left text-white">Card Rummy</td>
-                </tr>
-                <tr className="bg-[#06091F]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Developer</td>
-                  <td className="py-4 px-6 text-left text-white">eriocardrummy dev</td>
-                </tr>
-                <tr className="bg-[#0a1029]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Category</td>
-                  <td className="py-4 px-6 text-left text-white">Cards, Game</td>
-                </tr>
-                <tr className="bg-[#06091F]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Size</td>
-                  <td className="py-4 px-6 text-left text-white">49MB</td>
-                </tr>
-                <tr className="bg-[#0a1029]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Latest Version</td>
-                  <td className="py-4 px-6 text-left text-white">V1.231</td>
-                </tr>
-                <tr className="bg-[#06091F]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Required OS</td>
-                  <td className="py-4 px-6 text-left text-white">Android 5.0+</td>
-                </tr>
-                <tr className="bg-[#0a1029]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Update</td>
-                  <td className="py-4 px-6 text-left text-white">1st-January-2026</td>
-                </tr>
-                <tr className="bg-[#06091F]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Downloads</td>
-                  <td className="py-4 px-6 text-left text-white">500k+</td>
-                </tr>
-                <tr className="bg-[#0a1029]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Rating Count</td>
-                  <td className="py-4 px-6 text-left text-white">200000+</td>
-                </tr>
-                <tr className="bg-[#06091F]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Language</td>
-                  <td className="py-4 px-6 text-left text-white">English, Urdu</td>
-                </tr>
-                <tr className="bg-[#0a1029]/50">
-                  <td className="py-4 px-6 text-left font-medium text-white">Price</td>
-                  <td className="py-4 px-6 text-left text-white">Free (0$)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Overview Section */}
-      <section id="overview" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">Overview</h2>
-          <div className="space-y-6">
-            <p className="text-gray-300 leading-relaxed">
-              This app is divided into various sections, including card games, slots, poker, and many others, making it easy to find games that you want to play. CardRummy is designed with modern graphics, smooth gameplay, and an easy interface that makes this platform more suitable for both beginners and experienced players. This app also offers you great and interesting services, allowing you to earn significant money even by investing a small amount. You can also win real cash rewards or bonuses for free. So, download the game, and start playing your favorite games to earn real cash for free.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* What is Card Rummy Section */}
-      <section id="what-is-card-rummy" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">What is Card Rummy?</h2>
-          <div className="space-y-6">
-            <p className="text-gray-300 leading-relaxed">
-              Card Rummy is Pakistan's most popular online card game platform that combines classic card games like Teen Patti and Rummy with modern gaming technology. When people search for "Card Rummy", they're looking for a trusted platform to play card games and earn real money. Card Rummy delivers exactly that - a safe, secure, and exciting gaming experience where you can play different card games to earn money. It has become the go-to platform for card game enthusiasts in Pakistan who want to enjoy beautiful design, simple settings, classic themes, and easy gameplay options.
-            </p>
-
-            <p className="text-gray-300 leading-relaxed">
-              The Card Rummy platform allows you to withdraw your winnings or deposit money anytime using local payment methods like JazzCash and EasyPaisa. When you complete your deposit, you receive a deposit bonus as well. With its attractive visuals, user-friendly design, and exciting offers, Card Rummy stands out as one of the most enjoyable and engaging casino-style card games available in Pakistan today.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Card Rummy Popular Section */}
-      <section id="why-card-rummy-popular" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">Why Card Rummy Game so Popular?</h2>
-          <div className="space-y-6">
-            <p className="text-gray-300 leading-relaxed">
-              The 3 Patti Card Rummy game is very popular because it allows you to earn real money while having fun. It is easy to play because it provides you with simple rules that are very easy to understand, especially for beginners. The design of this app is very beautiful and colorful, which gives you a real casino experience on your device. Players love this app because you can withdraw and deposit money easily through Easypaisa and Jazzcash without facing any delays.
-            </p>
-
-            <p className="text-gray-300 leading-relaxed">
-              It also includes many exciting games such as Teen Patti, Dragon vs Tiger, Poker, Rummy, and Slots, so that you never feel bored. The other main reason for the popularity of 3 Patti Card Rummy is its daily bonus and rewards that help you earn coins and extra cash. It is very safe and secure and can protect your personal details or money, and work smoothly even on low-storage devices.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* How to Start Section */}
-      <section id="how-to-start" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">How Can We Start with Card Rummy?</h2>
-          <div className="space-y-4">
-            <p className="text-gray-300 leading-relaxed">To start the CardRummy game, follow the given steps:</p>
-            <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-              <li>Firstly, open the official website of 3 Patti Card Rummy and <a href="https://pkcardrummy.com/?from_gameid=6276686&channelCode=6191689" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline font-semibold">download the APK file</a> to your device.</li>
-              <li>Once downloaded then click on the downloaded APK file to start the installation by allowing the Unknown Sources.</li>
-              <li>Once installation is complete, click on it to open the 3 Patti Card Rummy app.</li>
-              <li>When the app opens then log in with your mobile number or just play as a guest.</li>
-              <li>When you log in, you will get free chips or welcome bonuses to start playing the game.</li>
-              <li>Choose a table or game that you want to play, and start enjoying the game.</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Game Screenshots Section */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-[#06091F] rounded-xl p-8">
-          <h2 className="text-4xl font-bold mb-12 text-[#FFA500] text-center">Card Rummy App Screenshots</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {/* Main Game Interface */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
+            <div className="relative mx-auto w-[160px] sm:w-[180px] lg:w-[200px] shrink-0">
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-gold/25 via-crimson/15 to-felt/30 blur-2xl" />
+              <div className="relative sky-panel p-1.5 sm:p-2 animate-floaty">
                 <Image
-                  src="/card-rummy-game-interface.webp"
-                  alt="Card Rummy Game Interface"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  src="/teen-patti-sky.webp"
+                  alt="Teen Patti Sky official app icon"
+                  width={200}
+                  height={200}
+                  priority
+                  fetchPriority="high"
+                  quality={75}
+                  className="w-full h-auto rounded-xl"
+                  sizes="(max-width: 640px) 160px, (max-width: 1024px) 180px, 200px"
                 />
               </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Game Interface</p>
-            </div>
-
-            {/* Games Collection */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/card-rummy-games.webp"
-                  alt="Card Rummy Games Collection"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Games Collection</p>
-            </div>
-
-            {/* Bonuses */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/card-rummy-earn-bonus.webp"
-                  alt="Card Rummy Bonuses & Rewards"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Bonuses & Rewards</p>
-            </div>
-
-            {/* Add Money */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/card-rummy-add-money.webp"
-                  alt="Card Rummy Deposit Money"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Add Money</p>
-            </div>
-
-            {/* Withdraw Money */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/card-rummy-withdraw-money.webp"
-                  alt="Card Rummy Withdraw Money"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Withdraw Money</p>
-            </div>
-
-            {/* Refer and Earn */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/card-rummy-refer-and-earn.webp"
-                  alt="Card Rummy Refer and Earn"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Refer & Earn</p>
-            </div>
-
-            {/* Recharge Rebate */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/card-rummy-recharge-rebate.webp"
-                  alt="Card Rummy Recharge Rebate"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Recharge Rebate</p>
-            </div>
-
-            {/* Bind Email */}
-            <div className="w-full">
-              <div className="rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="/card-rummy-bind-mail.webp"
-                  alt="Card Rummy Bind Email"
-                  width={400}
-                  height={711}
-                  className="w-full h-auto"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <p className="text-center text-gray-300 mt-3 font-medium">Account Security</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="card-rummy-features" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-8 text-accent">Top Features of Card Rummy</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">1: Real Money Earning</h3>
-            <p className="text-gray-300">Card Rummy allows you to earn real cash rewards just by playing the game that you want to play or like. Whether you enjoy teen patti, poker, or rummy, every match provides you with a chance to win money. This app directly transfers your earnings through the local and easy payment methods safely.</p>
+      {/* APK DETAILS TABLE */}
+      <section className="px-4 md:px-8 pb-10" id="apk-details">
+        <div className="max-w-5xl mx-auto sky-panel overflow-hidden">
+          <div className="px-6 py-4 border-b border-gold/15 flex flex-wrap items-center justify-between gap-3 bg-felt/40">
+            <h2 className="font-display text-xl md:text-2xl font-bold text-gold m-0 border-0 p-0">
+              3 Patti Sky Download Info
+            </h2>
+            <span className="text-xs uppercase tracking-wider text-cream/50">{APP_DETAILS.version} · {APP_DETAILS.size}</span>
           </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">2: Easy Withdraw & Deposit</h3>
-            <p className="text-gray-300">With 3 Patti Card Rummy, you can manage your money in a super simple or fast way. With just a few steps, you can withdraw or deposit money anytime using local payment methods, such as JazzCash or EasyPaisa. It also ensures you have secure and quick transactions without any delays.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">3: Attractive Interface</h3>
-            <p className="text-gray-300">This app is designed with a bright, colorful, and modern interface that can attract its users. The background music, smooth animations, and clear layout create an amazing or pleasant experience. Each section of this app is designed very well, so that you can find your favourite game easily.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">4: Popular Games</h3>
-            <p className="text-gray-300">3 Card Rummy provides you with a wide variety of famous games in one app so that you can enjoy dragon vs tiger, poker, slots, and many other exciting options. Each game of this app has simple rules that make it perfect for both beginners and experienced players.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">5: Daily Bonus</h3>
-            <p className="text-gray-300">This app rewards you every day with free login bonuses or chips. You can earn extra coins just by opening the app regularly. It also provides special rewards on weekly or festival occasions. These bonuses help you to keep playing even if you do not want to deposit money.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">6: Referral Earning</h3>
-            <p className="text-gray-300">3 Patti Card Rummy offers you a referral program where you can earn money without playing games. You just need to share your referral link with your friends and invite them to join. When they start playing games, you receive a commission automatically.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">7: Fast Performance</h3>
-            <p className="text-gray-300">This app runs smoothly on almost every Android device, even on older models. It does not hang, crash, or use too much storage space. The lightweight design of this app helps it to run faster and load to provide a smooth gameplay.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">8: Safe & Secure Platform</h3>
-            <p className="text-gray-300">In 3Patti Card Rummy, your privacy and money are completely safe because it uses a secure payment method and data protection system that keeps everything private. This app is trusted by thousands of players for its reliability.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">9: Free to Play</h3>
-            <p className="text-gray-300">3 Patti Card Rummy is free to download and does not ask for any registration fees. Through this feature, you can start playing games quickly with free chips that are given by the app. This feature is a perfect choice, especially for beginners.</p>
-          </div>
-          <div className="bg-secondary px-8 py-8 rounded-lg card-glow">
-            <h3 className="text-xl font-semibold mb-3 text-accent">10: 24/7 Support</h3>
-            <p className="text-gray-300">This app also provides you with fast customer support, which helps you anytime. Whether you face a deposit issue or a technical error, this support team responds quickly. You can contact the team directly through the app for quick help.</p>
-          </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Available Games Section */}
-      <section id="card-rummy-games" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Best Games to Play on Card Rummy</h2>
-          
-          <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 text-[#FFA500]">1: Multiplayer Games</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Tiger Dragon <span className="text-[#f97316]">(Hot)</span></p>
-          </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">7 UP Down <span className="text-[#f97316]">(Hot)</span></p>
-          </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Zoo Roulette <span className="text-[#f97316]">(Hot)</span></p>
-          </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Crash</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Car Roulette</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Andar Bahar</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Teenpatti 20-20</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Best of Five</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 text-[#FFA500]">2: Skill-Based Games</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Domino <span className="text-[#f97316]">(Hot)</span></p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Rummy <span className="text-[#f97316]">(Hot)</span></p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Teen Patti</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Fishing Rush</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">10 Cards</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Poker</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Ludo</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Black Jack</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-semibold mb-4 text-[#FFA500]">3: Slots</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Mines <span className="text-[#f97316]">(Hot)</span></p>
-            </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Fruit Line</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">777 Bingo</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Rattling GEMS</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Video Poker 1, 2</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">Wild Energy</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">WoW Slot</p>
-              </div>
-              <div className="bg-[#0A1029] p-4 rounded-lg">
-                <p className="text-white font-medium">God of Fortune</p>
-          </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bonuses Section */}
-      <section id="card-rummy-bonuses" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Benefits for New Players by Joining Card Rummy</h2>
-        
-        {/* New Player Welcome Bonus */}
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">1: New Player Welcome Bonus</h3>
-          <p className="text-gray-300 mb-4">3Patti offers a 100% recharge bonus for all new, fresh users on their first deposit in this game.</p>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-800 rounded-lg overflow-hidden">
-              <thead className="bg-[#0a1029]">
-                <tr>
-                  <th className="py-3 px-6 text-left text-white font-semibold">Deposit Amount (PKR)</th>
-                  <th className="py-3 px-6 text-left text-white font-semibold">Bonus Amount (PKR)</th>
+          <table className="apk-table">
+            <tbody>
+              {apkRows.map(([k, v]) => (
+                <tr key={k}>
+                  <th scope="row">{k}</th>
+                  <td>{v}</td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-800">
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">100</td><td className="py-3 px-6 text-gray-300">100</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">1000</td><td className="py-3 px-6 text-gray-300">1000</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">5000</td><td className="py-3 px-6 text-gray-300">5000</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">10,000</td><td className="py-3 px-6 text-gray-300">10,000</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">20,000</td><td className="py-3 px-6 text-gray-300">20,000</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">100,000</td><td className="py-3 px-6 text-gray-300">100,000</td></tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-
-        {/* Recharge Rebate */}
-        <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">2: Recharge Rebate</h3>
-          <p className="text-gray-300 mb-4">3 Patti Card Rummy game is also offering huge recharge rebate bonuses for every player when they deposit an amount.</p>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-800 rounded-lg overflow-hidden">
-              <thead className="bg-[#0a1029]">
-                <tr>
-                  <th className="py-3 px-6 text-left text-white font-semibold">Rebate</th>
-                  <th className="py-3 px-6 text-left text-white font-semibold">Recharge Required</th>
-                  <th className="py-3 px-6 text-left text-white font-semibold">Required Wager</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-800">
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">5%</td><td className="py-3 px-6 text-gray-300">3000 PKR</td><td className="py-3 px-6 text-gray-300">2x</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">10%</td><td className="py-3 px-6 text-gray-300">5000</td><td className="py-3 px-6 text-gray-300">3x</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">15%</td><td className="py-3 px-6 text-gray-300">8000</td><td className="py-3 px-6 text-gray-300">4x</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">20%</td><td className="py-3 px-6 text-gray-300">10,000</td><td className="py-3 px-6 text-gray-300">5x</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">25%</td><td className="py-3 px-6 text-gray-300">20,000</td><td className="py-3 px-6 text-gray-300">6x</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">30%</td><td className="py-3 px-6 text-gray-300">50,000</td><td className="py-3 px-6 text-gray-300">7x</td></tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-
-        {/* Big Rebate on Recharge */}
-        <div>
-          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">3: Big Rebate on Recharge</h3>
-          <p className="text-gray-300 mb-4">This type of reward is only available for deposit of a minimum of 3000PKR or more. It also depends upon VIP Level with increasing rebate bonus. It can be claimed every day.</p>
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-800 rounded-lg overflow-hidden">
-              <thead className="bg-[#0a1029]">
-                <tr>
-                  <th className="py-3 px-6 text-left text-white font-semibold">VIP Level</th>
-                  <th className="py-3 px-6 text-left text-white font-semibold">Rebate</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-800">
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">V1-V2</td><td className="py-3 px-6 text-gray-300">1% rebate</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">V3-V4</td><td className="py-3 px-6 text-gray-300">2% rebate</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">V5-V6</td><td className="py-3 px-6 text-gray-300">3% rebate</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">V7-V8</td><td className="py-3 px-6 text-gray-300">4% rebate</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">V9-V10</td><td className="py-3 px-6 text-gray-300">5% rebate</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">V11-V12</td><td className="py-3 px-6 text-gray-300">6% rebate</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">V13-V14</td><td className="py-3 px-6 text-gray-300">7% rebate</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">V15-V16</td><td className="py-3 px-6 text-gray-300">8% rebate</td></tr>
-                <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">V17-V18</td><td className="py-3 px-6 text-gray-300">9% rebate</td></tr>
-                <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">V19-V20</td><td className="py-3 px-6 text-gray-300">10% rebate</td></tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Download Instructions */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Download Card Rummy APK Latest Version For Android?</h2>
-          <p className="text-gray-300 mb-4">To download the latest version of Card Rummy APK for Android devices, follow the given steps:</p>
-          <div className="mb-8">
-          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-            <li>First, you open the browser on your Android device and click on the search bar.</li>
-            <li>In the search bar, type the latest version of Card Rummy and visit the trusted website.</li>
-            <li>On the trusted website, click on the Download button to start downloading.</li>
-            <li>Now wait a few seconds to complete the downloading process.</li>
-            <li>Once complete, that file will be saved in the Download Folder of the device.</li>
-          </ol>
-        </div>
-        
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Installation Guide for Card Rummy APK</h2>
-        <p className="text-gray-300 mb-4">After downloading to installing the Card Rummy APK, follow the given steps:</p>
-        <div className="mb-8">
-          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-            <li>To start installation, your device grants permission to install unknown sources.</li>
-            <li>Open the Settings &lt; Security and enable the Install Unknown Apps.</li>
-            <li>After this, open the File Manager and go to the Download Folder.</li>
-            <li>Click on the download APK file, and the installation process will start.</li>
-            <li>Wait until the installation completes successfully on your device.</li>
-            <li>Once complete then the app icon will show on your device.</li>
-            <li>Click on it to launch the app and start playing the games that you want.</li>
-          </ol>
-        </div>
-
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">System Requirements</h2>
-        <div className="overflow-x-auto mb-8">
-          <table className="min-w-full divide-y divide-gray-800 rounded-lg overflow-hidden">
-            <thead className="bg-[#0a1029]">
-              <tr>
-                <th className="py-3 px-6 text-left text-white font-semibold">System</th>
-                <th className="py-3 px-6 text-left text-white font-semibold">Minimum</th>
-                <th className="py-3 px-6 text-left text-white font-semibold">Recommended</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-800">
-              <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">Operating System</td><td className="py-3 px-6 text-gray-300">Android 5.0+</td><td className="py-3 px-6 text-gray-300">Android 8.0 or above</td></tr>
-              <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">RAM</td><td className="py-3 px-6 text-gray-300">2GB or more</td><td className="py-3 px-6 text-gray-300">4GB or more</td></tr>
-              <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">Storage Space</td><td className="py-3 px-6 text-gray-300">At least 500 MB free</td><td className="py-3 px-6 text-gray-300">1GB free space</td></tr>
-              <tr className="bg-[#0a1029]/50"><td className="py-3 px-6 text-gray-300">Processor</td><td className="py-3 px-6 text-gray-300">Quad-core 1.5 GHz</td><td className="py-3 px-6 text-gray-300">Octa-core 2.0 GHz</td></tr>
-              <tr className="bg-[#06091F]/50"><td className="py-3 px-6 text-gray-300">Internet</td><td className="py-3 px-6 text-gray-300">Stable 3G or WiFi</td><td className="py-3 px-6 text-gray-300">Fast & stable 4G or WiFi</td></tr>
+              ))}
             </tbody>
           </table>
         </div>
-
-        <div className="flex justify-center">
-          <CtaButton>DOWNLOAD NOW</CtaButton>
-          </div>
-        </div>
       </section>
 
-      {/* Account Creation */}
-      <section id="register-login" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Register & Login on Card Rummy?</h2>
-          
-          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">1: Register Method</h3>
-          <p className="text-gray-300 mb-4">To register the account on Card Rummy, follow the given steps:</p>
-          <div className="mb-8">
-          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-            <li>Firstly, open the Card Rummy app on your device.</li>
-            <li>On the homescreen, click on the Register or Sign Up option.</li>
-            <li>Now, enter your valid mobile number or email address.</li>
-            <li>Set a strong password that can never be accessed easily.</li>
-            <li>Enter the OTP that you can receive through phone or email for verification.</li>
-            <li>Once verification is complete then your account will be created successfully.</li>
-          </ol>
-          </div>
-
-          <h3 className="text-xl font-semibold mb-4 text-[#FFA500]">2: Login Method</h3>
-          <p className="text-gray-300 mb-4">After registration, the next step is to log account for Follow the given steps:</p>
-          <div className="space-y-4">
-          <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-            <li>Open the Card Rummy app on your device.</li>
-            <li>Click on the Login button on the homescreen.</li>
-            <li>Enter your registered mobile number, email, or password.</li>
-            <li>Make sure that your entered details are correct.</li>
-            <li>Once confirmed, tap on the Sign in or Login option.</li>
-            <li>If you forget your password, then use Forgot Password to reset it.</li>
-            <li>Once logging is complete, you can start playing games.</li>
-          </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Payment Methods Section */}
-      <section id="deposit-withdraw" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Ways to Deposit & Withdraw Money in Card Rummy</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            <div className="bg-[#0A1029] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">1: Jazzcash</h3>
-              <p className="text-gray-300">Jazzcash is one of the most trusted and secure mobile banking services that allows you to deposit money quickly into your gaming account and start playing games quickly. It's a fast and safe transaction system that allows you to withdraw your winnings directly into your account wallet. The best part of this method is that you can wait a long time because the transactions are completed within seconds.</p>
-            </div>
-            <div className="bg-[#0A1029] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">2: Easypaisa</h3>
-              <p className="text-gray-300">Easypaisa is another secure and most commonly used payment method that is similar to the JazzCash method. It allows you to deposit or withdraw money without any difficulty. Through this method, you can add funds to your game account and transfer winnings to your Easypaisa wallet in just a few steps. The process of this method is very safe, reliable, and suitable for all types of users.</p>
-            </div>
-            <div className="bg-[#0A1029] p-6 rounded-lg md:col-span-2 lg:col-span-1">
-              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">3: Bank Card</h3>
-              <p className="text-gray-300">Bank Card is a convenient withdrawal option that lets you send your winnings directly to your bank account. Simply choose your desired bank, enter your account number, user name, and email, then submit your withdrawal request. With Bank Card, you can withdraw up to PKR 20,000 maximum per transaction, making it ideal for larger payouts. This method provides a secure way to receive your earnings straight to your bank account.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Deposit Instructions */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-secondary rounded-xl p-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Deposit Money?</h2>
-            <p className="text-gray-300 mb-4">To deposit money in Card Rummy, follow the given steps:</p>
-                <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-              <li>First, open the Card Rummy app on your device and log in.</li>
-              <li>Now, click on the Wallet option that is available on the homescreen.</li>
-              <li>In this wallet section, click on the Deposit option.</li>
-              <li>Choose a payment method that you want to use.</li>
-              <li>Enter the amount that you want to deposit.</li>
-              <li>Click on the confirm option and wait to complete it.</li>
-              <li>Once complete, the balance will show in your game wallet.</li>
-                </ol>
-              </div>
-          <div className="bg-secondary rounded-xl p-8">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How to Withdraw Money?</h2>
-            <p className="text-gray-300 mb-4">To withdraw money in Card Rummy, follow the given steps:</p>
-                <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-              <li>Open the Card Rummy app and log in to your account.</li>
-              <li>Click on the Wallet option that is available on the main screen.</li>
-              <li>In the wallet section, click on the Withdrawal option.</li>
-              <li>Choose your payment method, like JazzCash, EasyPaisa, or Bank Card.</li>
-              <li>Now enter the amount that you want to withdraw.</li>
-              <li>Enter some required details, like the account number.</li>
-              <li>Double-check all entered details and click on Confirm.</li>
-              <li>Wait a few seconds to complete the withdrawal process.</li>
-              <li>Once complete, that money will be shown in your selected payment method.</li>
-                </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Tips and Tricks */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Tips & Tricks to Earn Maximum on Teen Patti Card Rummy Game</h2>
-          <div className="space-y-4">
-          <ul className="list-disc pl-5 space-y-3 text-gray-300">
-            <li><strong>Start with Small Bets:</strong> Always start a game with a small investment because it will help you to understand the game rules and overcome the risk of losing money. When you become confident, then increase your bet.</li>
-            <li><strong>Use Bonuses Wisely:</strong> Card Rummy offers you daily login bonuses, referral bonuses, or deposit rewards. It helps you to play more games without spending your one money or earning extra money.</li>
-            <li><strong>Play Popular Games:</strong> Focus on high-earning games such as Dragon vs Tiger or Teen Patti Classic that provide you with higher winning chances, and also attract players with better opportunities to earn.</li>
-            <li><strong>Invite Friends:</strong> Use the referral link system to invite friends every time your friends join, and then you can earn commission. The more friends you invite, the higher you can become.</li>
-            <li><strong>Stay Active Daily:</strong> Regularly log in to the app to collect the daily rewards or spin bonuses. Always stay active because it will increase your bonus balance or improve your chances of winning big.</li>
-            <li><strong>Withdraw on Time:</strong> When you earn a good amount then do not delay withdrawal. Always transfer your winnings as soon as possible through Jazcash or EasyPaisa to keep your money safe.</li>
-            <li><strong>Learn from Practice Mode:</strong> Before playing games with real money, try the free or demo mode as practice. This helps you to understand the gameplay easily and develop the winning strategies without any risk.</li>
-            <li><strong>Keep the Emotions in Control:</strong> Never play games with frustration or greed. Always stay calm or make smart decisions during the game because it helps you to avoid unnecessary losses.</li>
-            <li><strong>With Expert Players:</strong> Observe how other players make the moves. Through this, you can learn new techniques or strategies and timing from them to improve your skills.</li>
-            <li><strong>Avoid Fake Apps:</strong> Always download the original Card Rummy app through official or trusted sources because fake links or websites can steal your personal data or money.</li>
-          </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* What's New Section */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">What's New in the Latest Version of the Card Rummy?</h2>
-          <div className="space-y-4">
-            <ol className="list-decimal pl-5 space-y-3 text-gray-300">
-              <li>In the latest version, the game looks better with improved graphics and smooth animations.</li>
-              <li>Provide fast performance so that the app opens quickly and runs smoothly without lag.</li>
-              <li>Its menu and layout are simple, which makes it very easy, especially for new users.</li>
-              <li>In the latest versions, more games are added, such as Dragon vs Tiger, Rummy, and others.</li>
-              <li>The withdrawal or deposit options work faster and smoothly in the latest version.</li>
-              <li>In the latest version, better security measures can be used that can protect your account and money.</li>
-              <li>New bonuses and referral rewards provide you with more chances to earn money.</li>
-              <li>Old Errors or app issues are removed to offer a smooth gaming experience.</li>
-              <li>The background music or game sounds improve the app and provide more fun.</li>
-              <li>The new VIP system gives you extra prizes and benefits that help you stay active.</li>
-            </ol>
-          </div>
-        </div>
-      </section>
-
-      {/* Pros and Cons */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Pros & Cons of using Card Rummy</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Pros</h3>
-            <div className="bg-[#0A1029] px-8 py-8 rounded-lg">
-              <ul className="list-disc pl-5 space-y-3 text-gray-300">
-                <li>Very simple and fun to play</li>
-                <li>Earn money with a small investment</li>
-                <li>Jazzcash and Easypaisa make payment easy</li>
-                <li>Many different games for enjoyment</li>
-                <li>Fast withdrawal of your money</li>
-                <li>Very easy to use and quick to start</li>
-                <li>Daily rewards and bonuses</li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Cons</h3>
-            <div className="bg-[#0A1029] px-8 py-8 rounded-lg">
-              <ul className="list-disc pl-5 space-y-3 text-gray-300">
-                <li>Risk of losing money</li>
-                <li>Sometimes withdrawals take time</li>
-                <li>Gameplay can be addictive</li>
-                <li>Run slow on weak phones</li>
-                <li>No legal Support</li>
-                <li>No Financial Freedom</li>
-                <li>Gameplay can be complicated</li>
-              </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Safety Section */}
-      <section id="safety-security" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">About the Safety & Security of the Card Rummy</h2>
-          <div className="space-y-4">
-            <p className="text-gray-300 leading-relaxed">
-              Card Rummy is an online gaming platform that provides you with a safe and secure environment. It uses basic security features such as data encryption or SSL certificates that can protect your information. This app also supports local payment options such as JazzCash or Easy Paisa, which can make the transactions safer and secure. However, this app is not officially available on the Google Play Store and may come with some risks, such as malware or scams. So, it is important to make sure that you can download it from official, safe, and secure sources. Always avoid sharing your sensitive personal information or banking details.
+      {/* INTRO + GAMEPLAY IMAGE */}
+      <section className="felt-band px-4 md:px-8 py-12">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+          <div className="prose-sky">
+            <p>
+              Welcome to the official Teen Patti Sky hub on teenpattiskyapp.com.pk — your guide to download, play, and
+              understand rewards on 3 Patti Sky. Special game modes, daily bonuses, free chips, and live challenges make
+              sessions feel lively whether you play casually or chase higher tables.
             </p>
+            <p>
+              The 3 Patti Sky APK is built for smooth Android performance with VIP lounges, elite tables, live winning
+              updates, daily login gifts, referral rewards, and local wallet withdrawals. Regular updates keep the lobby
+              fresh for Pakistani players who want both entertainment and real reward opportunities.
+            </p>
+            <div className="not-prose mt-6">
+              <CtaButton ariaLabel="Download 3 Patti Sky APK now">DOWNLOAD NOW</CtaButton>
+            </div>
+          </div>
+          <div className="sky-panel p-2">
+            <Image
+              src="/teen-patti-sky-game.webp"
+              alt="3 Patti Sky live multiplayer gameplay on Android"
+              width={1200}
+              height={565}
+              className="rounded-xl w-full h-auto"
+              sizes="(max-width: 1024px) 100vw, 560px"
+            />
           </div>
         </div>
       </section>
 
-      {/* Contact Support Section */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">How Can We Contact the Card Rummy?</h2>
-          <p className="text-gray-300 mb-6">To contact the customer support team of Card Rummy, you can use the given methods:</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#0A1029] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">Live Chat</h3>
-              <p className="text-gray-300">Card Rummy provides you with a live chat feature inside the app so that you can directly talk to the support team if you face any problems. Whether you face any issue like playing or using the app, this team responds to you quickly and helps you solve your issues in real time. Live chat is the fastest way to get support without leaving the app.</p>
-            </div>
-            <div className="bg-[#0A1029] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">WhatsApp</h3>
-              <p className="text-gray-300">You can also contact the support team through WhatsApp. You can simply use the number that is provided in the app to send your problem. This support team replies to you with instructions or solutions that make it easy to fix any problem. This WhatsApp support is very convenient because this is a simple and easy way to get help.</p>
-            </div>
-            <div className="bg-[#0A1029] p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-[#FFA500]">FAQs</h3>
-              <p className="text-gray-300">This app also dedicates a FAQs section where common questions are given with their answers. You can check this section before contacting the customer support team to save time. These FAQs mostly cover all topics such as registration, deposit, withdrawals, bonuses, and game rules. So, this is quick and easy to find the solution without waiting long.</p>
-            </div>
+      {/* BODY + TOC */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 grid lg:grid-cols-[220px_1fr] gap-10">
+        <aside className="hidden lg:block">
+          <div className="sticky top-24 sky-panel p-4 max-h-[70vh] overflow-y-auto">
+            <p className="text-xs font-bold uppercase tracking-widest text-gold mb-3">Table of Contents</p>
+            <nav aria-label="On this page" className="space-y-0.5">
+              {toc.map((item) => (
+                <a key={item.id} href={`#${item.id}`} className="toc-link">
+                  {item.label}
+                </a>
+              ))}
+            </nav>
           </div>
-        </div>
-      </section>
+        </aside>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-        <h2 className="text-3xl font-bold mb-8 text-[#FFA500]">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              What is Card Rummy and how does it work?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              Card Rummy is Pakistan's premier online card game platform where you can play Teen Patti, Rummy, Dragon vs Tiger, and many other exciting casino games. You can play Card Rummy without depositing money by using free bonuses like the Welcome Bonus and Referral Commission. Card Rummy offers real cash rewards with fast withdrawals via JazzCash and EasyPaisa.
-            </div>
+        <article className="prose-sky min-w-0">
+          {/* Mobile TOC */}
+          <details className="lg:hidden sky-panel p-4 mb-8">
+            <summary className="font-bold text-gold cursor-pointer">Table of Contents</summary>
+            <nav className="mt-3 grid sm:grid-cols-2 gap-1">
+              {toc.map((item) => (
+                <a key={item.id} href={`#${item.id}`} className="toc-link">
+                  {item.label}
+                </a>
+              ))}
+            </nav>
           </details>
 
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              How to download Card Rummy APK?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              To download Card Rummy APK, visit cardrummyapp.com.pk and click the download button. The Card Rummy APK file will be saved to your device. Enable "Install from Unknown Sources" in your Android settings, then open the downloaded file to install Card Rummy.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              What makes Card Rummy different from other card games?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              Card Rummy stands out with its simple design, fast transactions via JazzCash and EasyPaisa, exciting games like Teen Patti and Rummy, daily bonuses, and secure platform. Card Rummy offers the best card gaming experience in Pakistan with real cash rewards.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              Is Card Rummy safe and legal to use?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              Yes, Card Rummy is safe to use with secure data encryption and privacy protection. Card Rummy ensures your personal information and transactions are protected. However, the legality of online gaming depends on your local laws, so always check your region's regulations before playing Card Rummy.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              Can users lose money while playing?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              Yes, this app is involved with real money, so you might lose some amount if you do not play the games carefully. So, always play wisely and set a limit while playing.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              Is it possible to change the language of Card Rummy?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              Yes, it is possible because this app supports multiple languages, so you can change the language from the settings menu easily.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              How do referral rewards work?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              When you share your referral link with others, or when someone joins this app through your link, you can receive a commission.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              How to bind bank?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              To bind your bank for withdrawals, go to Wallet &gt; Withdrawal &gt; Bank Card. Select your desired bank from the list, then enter your account number, user name, and email. Once submitted, your bank account will be linked and ready for withdrawals.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              What is the maximum withdrawal at a time?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              For Bank Card withdrawals, the maximum amount you can withdraw at a time is PKR 20,000. For JazzCash and EasyPaisa, limits may vary—check the withdrawal section in the app for current limits.
-            </div>
-          </details>
-
-          <details className="group bg-[#0a1029]/50 rounded-xl border border-gray-700 hover:border-[#FFA500]/50 transition-all duration-300 shadow-md hover:shadow-lg">
-            <summary className="flex items-center justify-between p-4 cursor-pointer text-white font-medium hover:text-[#FFA500] transition-colors">
-              Is Card Rummy available on iPhone (iOS)?
-              <span className="transition group-open:rotate-180">
-                <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
-            </summary>
-            <div className="p-4 pt-0 text-gray-300 border-t border-gray-700/50">
-              This app is mainly available for Android devices, but you can also check the official website or store for updates about iOS availability.
-            </div>
-          </details>
-          </div>
-        </div>
-      </section>
-
-      {/* Conclusion */}
-      <section className="pt-12 pb-4 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="bg-secondary rounded-xl p-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-accent">Final Thoughts</h2>
-          <div className="space-y-4">
-          <p className="text-gray-300">
-            Card Rummy is one of the most popular online card games in the world. It not only provides you with fun or entertainment but also provides you with a great chance to earn money if you play games wisely. This app provides you with a simple and user-friendly interface that can make it easy, especially for beginners, to play games. The deposit or withdrawal system through JazzCash or EasyPaisa is very convenient, which makes this platform very easy to use. If you play responsibly, make plans with smart strategies, and focus on your skill rather than luck, Card Rummy can become a more exciting or rewarding gaming experience.
+          <SectionTitle id="what-is">What is 3 Patti Sky?</SectionTitle>
+          <p>
+            3 Patti Sky is a popular gaming app in Pakistan that blends fun card play with real reward opportunities.
+            Players can earn through table wins and a referral system — share your invite link with friends and family on
+            Facebook, Instagram, or Telegram and unlock commission (commonly described around up to 30% under live
+            program rules). New users often receive a welcome bonus near 100 PKR after install; always confirm the
+            current offer inside the app.
           </p>
+          <p>
+            Right now 3 Patti Sky targets Android phones and is not a native App Store product. The lobby spans modes such
+            as classic Teen Patti variants, 10 Cards, Ludo, Tiger vs Dragon, Mines, Zoo Roulette, and BlackJack. You can
+            start with a modest deposit around 100 PKR, while larger bankrolls unlock VIP perks. Each qualifying deposit
+            may include a reward-wheel spin. JazzCash, EasyPaisa, and bank transfer keep money movement local and
+            familiar.
+          </p>
+          <div className="not-prose sky-panel p-2 my-6">
+            <Image
+              src="/teen-patti-sky-pakistan.webp"
+              alt="3 Patti Sky promoted for Pakistani players with local payments"
+              width={1200}
+              height={565}
+              className="rounded-xl w-full h-auto"
+              sizes="100vw"
+            />
           </div>
+
+          <SectionTitle id="overview">3 Patti Sky APK Overview</SectionTitle>
+          <p>
+            3 Patti Sky is a fast-growing online gaming platform where players across Pakistan join for real-time reward
+            chances. The catalogue stays wide, new titles appear over time, and bonuses — daily check-ins, deposit gifts,
+            referral prizes — help stretch playtime. Developers keep polishing mobile performance so tables feel
+            responsive on everyday Android phones.
+          </p>
+          <p>
+            The traditional Teen Patti feel remains the heart of the product, wrapped in colorful UI and social
+            multiplayer. From home you can learn rules, meet other players, and climb from beginner rooms into higher
+            stakes without needing a physical club.
+          </p>
+
+          <SectionTitle id="why-choose">Why Choose 3 Patti Sky?</SectionTitle>
+          <p>
+            Smooth graphics and simple controls make 3 Patti Sky feel close to a real table for both newcomers and
+            regulars. Anyone with a supported Android phone can download the Teen Patti Sky APK for Pakistan free of
+            charge — setup is quick, and early bonuses sweeten the first sessions.
+          </p>
+          <p>
+            Beyond entertainment, referral bonuses and first-deposit gifts let skilled players convert play into tangible
+            rewards. That mix of live tables and wallet-friendly offers is why the brand keeps trending in Pakistani
+            Teen Patti searches.
+          </p>
+
+          <SectionTitle id="rewards">Rewards You Can Claim in 3 Patti Sky</SectionTitle>
+          <div className="not-prose sky-panel p-2 my-6">
+            <Image
+              src="/teen-patti-sky-daily-bonus.webp"
+              alt="3 Patti Sky daily bonus and login rewards screen"
+              width={1200}
+              height={565}
+              className="rounded-xl w-full h-auto"
+            />
+          </div>
+          <h3>New User Bonus</h3>
+          <p>
+            Fresh accounts may receive a welcome reward based on the campaign running that week. Offers rotate, so check
+            the lobby banner after signup before you deposit.
+          </p>
+          <h3>Daily Login Rewards</h3>
+          <p>
+            Checking in each day can unlock coins, credits, or event prizes. Some calendars reset if you skip a day —
+            treat the claim button as part of your routine.
+          </p>
+          <h3>Referral Bonus</h3>
+          <p>
+            Share your code or link. When friends meet the activity rules, both sides can earn. Read the live referral
+            card — amounts and conditions change. See also our{" "}
+            <Link href="/blog/teen-patti-sky-bonuses-referral">bonuses & referral guide</Link>.
+          </p>
+          <h3>VIP Rewards</h3>
+          <p>
+            Players who hit VIP thresholds may unlock special tables, events, or richer offers. Membership usually needs
+            ongoing activity to stay active.
+          </p>
+
+          <SectionTitle id="agent">3 Patti Sky Agent Program and Referral System</SectionTitle>
+          <div className="not-prose sky-panel p-2 my-6">
+            <Image
+              src="/teen-patti-sky-referrals.webp"
+              alt="3 Patti Sky referral and agent program invite screen"
+              width={1200}
+              height={565}
+              className="rounded-xl w-full h-auto"
+            />
+          </div>
+          <p>
+            Active promoters can unlock milestone bonuses tied to how many active members they grow. Example tiers
+            commonly listed for the program (confirm inside the app before planning income):
+          </p>
+          <div className="not-prose overflow-x-auto sky-panel my-6">
+            <table className="apk-table min-w-[320px]">
+              <thead>
+                <tr>
+                  <th>Active members</th>
+                  <td className="font-bold text-gold">Bonus (PKR)</td>
+                </tr>
+              </thead>
+              <tbody>
+                {agentTiers.map(([m, b]) => (
+                  <tr key={m}>
+                    <th scope="row">{m}</th>
+                    <td>{b}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Larger networks unlock larger milestones. Treat the ladder as motivational structure — not a guaranteed
+            salary — and follow platform rules so accounts stay in good standing.
+          </p>
+
+          <SectionTitle id="features">Key Features of 3 Patti Sky</SectionTitle>
+          <div className="not-prose grid sm:grid-cols-2 gap-4 my-6">
+            {[
+              {
+                t: "Easy-to-use design",
+                d: "Clear menus so new and experienced players find tables without friction.",
+                img: "/teen-patti-sky-game.webp",
+              },
+              {
+                t: "Secure platform",
+                d: "Encrypted flows, fair-play tooling, and anti-cheat monitoring for honest rooms.",
+                img: "/teen-patti-sky-live-support.webp",
+              },
+              {
+                t: "Variety of modes",
+                d: "Classic Teen Patti, Joker, Muflis, AK47, Hukam-style variants, and more.",
+                img: "/teen-patti-sky-pakistan.webp",
+              },
+              {
+                t: "VIP & elite tables",
+                d: "Higher stakes and premium rooms once you level up.",
+                img: "/teen-patti-sky-daily-bonus.webp",
+              },
+              {
+                t: "Real-time multiplayer",
+                d: "Live opponents, chat energy, and true table pace on mobile data.",
+                img: "/teen-patti-sky-game.webp",
+              },
+              {
+                t: "JazzCash & EasyPaisa",
+                d: "Local deposits and withdrawals without foreign cards.",
+                img: "/teen-patti-sky-deposit-money.webp",
+              },
+            ].map((f) => (
+              <div key={f.t} className="sky-panel overflow-hidden">
+                <div className="relative aspect-[1200/565]">
+                  <Image src={f.img} alt={f.t} fill className="object-cover" sizes="(max-width:640px) 100vw, 50vw" />
+                </div>
+                <div className="p-4">
+                  <h3 className="font-display text-lg font-bold text-gold mb-1">{f.t}</h3>
+                  <p className="text-sm text-cream/70 m-0">{f.d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p>
+            Extra pillars include daily bonuses, OTP-backed login, fast Android performance on mid-range phones, and
+            regular updates that ship bug fixes plus occasional new modes. Bind your profile early — see the{" "}
+            <Link href="/blog/teen-patti-sky-account-login">account & login guide</Link>.
+          </p>
+
+          <SectionTitle id="games">Games Available in 3 Patti Sky</SectionTitle>
+          <div className="not-prose grid sm:grid-cols-2 lg:grid-cols-3 gap-3 my-6">
+            {games.map((g) => (
+              <div key={g.name} className="sky-panel p-4 border-l-2 border-gold/50">
+                <h3 className="font-display text-base font-bold text-gold mb-1">{g.name}</h3>
+                <p className="text-sm text-cream/70 m-0">{g.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <SectionTitle id="requirements">System Requirements for 3 Patti Sky APK</SectionTitle>
+          <ul>
+            <li>Android 5.0 or above</li>
+            <li>RAM: minimum 2 GB (3 GB recommended)</li>
+            <li>Storage: keep about 100–200 MB free</li>
+            <li>Stable internet for multiplayer tables</li>
+          </ul>
+          <p>
+            iOS play usually depends on browser or third-party paths, so performance can differ. A stable device setup
+            reduces crashes and lag.
+          </p>
+
+          <SectionTitle id="download">How to Download & Install 3 Patti Sky APK on Android</SectionTitle>
+          <p>
+            The game is not on Google Play for many regions, which confuses some players — sideloading an official APK
+            from a trusted page is normal in this category. Prefer teenpattiskyapp.com.pk over random mirrors.
+          </p>
+          <ol>
+            <li>Open your Android browser and visit teenpattiskyapp.com.pk.</li>
+            <li>Tap the APK Download button and wait for the file to finish.</li>
+            <li>Go to Settings → Security → Install unknown apps and allow your browser or Files app once.</li>
+            <li>Open the downloaded package and install 3 Patti Sky.</li>
+            <li>Launch the icon, sign up, and start exploring tables.</li>
+          </ol>
+          <div className="not-prose my-6">
+            <CtaButton ariaLabel="Download 3 Patti Sky APK">DOWNLOAD NOW</CtaButton>
+          </div>
+          <p>
+            Need screenshots and troubleshooting? Open the{" "}
+            <Link href="/download-teen-patti-sky">dedicated download guide</Link>.
+          </p>
+
+          <SectionTitle id="ios">Can You Play 3 Patti Sky on iPhone (iOS)?</SectionTitle>
+          <p>
+            There is no standard Teen Patti Sky APK for iOS. Some players use Safari on the official web entry: open the
+            site, tap Play Now / Play in Browser, then optionally Add to Home Screen for a shortcut. Expect a different
+            experience than the native Android build.
+          </p>
+
+          <SectionTitle id="pc">How to Download 3 Patti Sky for PC</SectionTitle>
+          <ol>
+            <li>Install a trusted Android emulator such as BlueStacks on Windows.</li>
+            <li>Download the 3 Patti Sky APK from this site.</li>
+            <li>Install the APK inside the emulator and log into your bound account.</li>
+          </ol>
+          <p>
+            Step-by-step emulator tips live on{" "}
+            <Link href="/teen-patti-sky-for-pc">Teen Patti Sky for PC</Link>.
+          </p>
+
+          <SectionTitle id="register">How to Register a New Account</SectionTitle>
+          <div className="not-prose sky-panel p-2 my-6">
+            <Image
+              src="/teen-patti-sky-bind-account.webp"
+              alt="Register and bind a 3 Patti Sky account"
+              width={1200}
+              height={565}
+              className="rounded-xl w-full h-auto"
+            />
+          </div>
+          <ol>
+            <li>Open the 3 Patti Sky app on Android.</li>
+            <li>Tap Register / Sign Up.</li>
+            <li>Enter your mobile number and OTP when prompted.</li>
+            <li>Create a strong password and finish any remaining fields.</li>
+            <li>Accept the terms, then create the account.</li>
+          </ol>
+          <p>
+            Use a number you control, keep the password private, and stay on stable data during OTP. Full walkthrough:{" "}
+            <Link href="/blog/teen-patti-sky-account-login">account & login</Link>.
+          </p>
+
+          <SectionTitle id="login">How to Login & Recover Password</SectionTitle>
+          <p>
+            Tap Login, enter your registered number or ID plus password, complete OTP if asked, then enter the lobby. If
+            login fails, check spelling, update the app, and use Forgot Password: enter your number, verify OTP, set a
+            new password, and sign in again. Never share OTPs with “agents” on social apps.
+          </p>
+
+          <SectionTitle id="whats-new">What&apos;s New in Version v2.5.0 (2026)?</SectionTitle>
+          <p>
+            The 2026 v2.5.0 line focuses on faster loads, tighter security for personal data, broader Android
+            compatibility, reward-system polish, and a cleaner UI for joining tables. Beginners and veterans both benefit
+            from keeping the latest package installed.
+          </p>
+
+          <SectionTitle id="payments">How to Deposit and Withdraw Funds</SectionTitle>
+          <div className="not-prose grid md:grid-cols-2 gap-4 my-6">
+            <div className="sky-panel overflow-hidden">
+              <Image
+                src="/teen-patti-sky-deposit-money.webp"
+                alt="Deposit money in 3 Patti Sky with JazzCash or EasyPaisa"
+                width={1200}
+                height={565}
+                className="w-full h-auto"
+              />
+              <div className="p-4">
+                <h3 className="font-display font-bold text-gold mb-2">Deposit</h3>
+                <p className="text-sm text-cream/75 mb-3">
+                  Menu → Deposit → JazzCash, EasyPaisa, or bank transfer → enter PKR → submit. Balance updates after
+                  confirmation.
+                </p>
+                <Link href="/deposit-money-in-teen-patti-sky" className="text-gold font-semibold text-sm">
+                  Full deposit guide →
+                </Link>
+              </div>
+            </div>
+            <div className="sky-panel overflow-hidden">
+              <Image
+                src="/teen-patti-sky-withdraw-money.webp"
+                alt="Withdraw winnings from 3 Patti Sky"
+                width={1200}
+                height={565}
+                className="w-full h-auto"
+              />
+              <div className="p-4">
+                <h3 className="font-display font-bold text-gold mb-2">Withdraw</h3>
+                <p className="text-sm text-cream/75 mb-3">
+                  Menu → Withdraw → choose wallet → enter amount → submit. After verification, funds move to your bound
+                  account.
+                </p>
+                <Link href="/withdraw-money-from-teen-patti-sky" className="text-gold font-semibold text-sm">
+                  Full withdraw guide →
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <SectionTitle id="compare">3 Patti Sky vs Other Teen Patti Apps</SectionTitle>
+          <p>
+            3 Patti Sky aims for a simple interface and quick table access. Versus heavier apps, differences usually show
+            in bonus structure, game variety, withdrawal speed, and day-to-day stability. It sits in the middle —
+            approachable for new players without feeling empty. Try a small session, then decide from your own results.
+          </p>
+
+          <h3 className="section-anchor" id="before-playing">
+            Things to Know Before Playing
+          </h3>
+          <ul>
+            <li>Install the latest APK for fixes and security patches.</li>
+            <li>Register with your own mobile number for easier recovery.</li>
+            <li>Read each mode’s rules before staking real PKR.</li>
+            <li>Check live bonus terms — promotions change.</li>
+            <li>Keep login details private and play inside a set budget.</li>
+          </ul>
+
+          <SectionTitle id="safety">Is 3 Patti Sky Legal, Safe & Legit in Pakistan?</SectionTitle>
+          <p>
+            Online real-money play sits in a legal grey area under Pakistan’s traditional gambling rules. Downloading is
+            usually straightforward; staking cash carries personal risk. Many users treat the app as entertainment, not
+            income. Platforms in this niche often lack a public casino licence display — stay cautious.
+          </p>
+          <p>
+            Safety improves when you use one trusted download path, OTP login, and small test cashouts. Experiences vary:
+            some players report smooth withdrawals, others hit verification delays. Start small, ignore “guaranteed
+            profit” spam, and{" "}
+            <Link href="/blog/how-to-contact-teen-patti-sky-customer-support">contact official support</Link> if something
+            feels wrong.
+          </p>
+
+          <SectionTitle id="support">3 Patti Sky Customer Support</SectionTitle>
+          <div className="not-prose sky-panel p-2 my-6">
+            <Image
+              src="/teen-patti-sky-live-support.webp"
+              alt="3 Patti Sky in-app live customer support"
+              width={1200}
+              height={565}
+              className="rounded-xl w-full h-auto"
+            />
+          </div>
+          <p>
+            For login, deposit, or bonus questions, use in-app Support or the official contact form — not random Facebook
+            “agents.” Site questions can also go to{" "}
+            <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> via our{" "}
+            <Link href="/contact-us">Contact page</Link>.
+          </p>
+
+          <SectionTitle id="pros-cons">Pros and Cons</SectionTitle>
+          <div className="not-prose grid md:grid-cols-2 gap-4 my-6">
+            <div className="sky-panel p-5">
+              <h3 className="font-display text-lg font-bold text-gold mb-3">Pros</h3>
+              <ul className="space-y-2 text-sm text-cream/80 list-disc pl-5">
+                <li>Clean interface friendly to beginners</li>
+                <li>Mix of Teen Patti and casual casino modes</li>
+                <li>Runs on most Android 5.0+ devices</li>
+                <li>Fast register / login with OTP options</li>
+                <li>Regular updates and JazzCash / EasyPaisa support</li>
+              </ul>
+            </div>
+            <div className="sky-panel p-5">
+              <h3 className="font-display text-lg font-bold text-crimson mb-3">Cons</h3>
+              <ul className="space-y-2 text-sm text-cream/80 list-disc pl-5">
+                <li>Needs stable internet for live tables</li>
+                <li>Some bonuses are event-only</li>
+                <li>Older phones may feel slower</li>
+                <li>Feature set can differ by build</li>
+                <li>Real-money play requires self-control</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>How we reviewed 3 Patti Sky</h3>
+          <p>
+            This page reflects the newest public APK details at writing time — install flow, UI, signup, Android
+            performance, payments, requirements, and update notes. Offers can change by version and region.
+          </p>
+          <h3>Playing responsibly</h3>
+          <p>
+            Cap your hours and bankroll, read reviews before funding, never chase losses, use your own wallet details, and
+            take breaks. Entertainment first — not a salary plan.
+          </p>
+
+          <SectionTitle id="verdict">Final Verdict</SectionTitle>
+          <p>
+            3 Patti Sky APK delivers classic Teen Patti energy with daily rewards, live multiplayer, VIP rooms, side
+            games like Ludo, Mines, and Roulette, plus JazzCash / EasyPaisa / bank cashouts. Set a spending limit,
+            download from this trusted path, invite friends only under official referral rules, and enjoy the tables for
+            fun.
+          </p>
+          <div className="not-prose flex flex-wrap gap-4 my-8">
+            <CtaButton ariaLabel="Download 3 Patti Sky today">DOWNLOAD NOW</CtaButton>
+            <Link href="/blog" className="self-center text-gold font-semibold underline underline-offset-4">
+              Read more guides →
+            </Link>
+          </div>
+
+          <SectionTitle id="faq">FAQs – 3 Patti Sky</SectionTitle>
+          <div className="not-prose space-y-3 mt-4">
+            {faqs.map((item) => (
+              <details key={item.q} className="sky-panel group px-5 py-4">
+                <summary className="cursor-pointer list-none font-semibold text-cream flex justify-between gap-3">
+                  <span>{item.q}</span>
+                  <span className="text-gold group-open:rotate-45 transition-transform text-xl">+</span>
+                </summary>
+                <p className="mt-3 text-cream/75 text-sm leading-relaxed">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </article>
+      </div>
+
+      {/* Bottom CTA band */}
+      <section className="felt-band px-4 md:px-8 py-14">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="font-display text-3xl font-extrabold text-cream mb-3">
+            Download 3 Patti Sky Game — Android v2.5.0
+          </h2>
+          <p className="text-cream/70 mb-6">
+            Free APK · JazzCash & EasyPaisa · Daily bonuses · Live Teen Patti tables
+          </p>
+          <CtaButton ariaLabel="Download 3 Patti Sky Game APK">Download 3 Patti Sky Game</CtaButton>
         </div>
       </section>
     </>

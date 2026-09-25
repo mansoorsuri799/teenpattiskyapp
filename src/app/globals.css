@@ -3,50 +3,56 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 2, 6, 23;
-  --background-end-rgb: 2, 6, 23;
+  --foreground-rgb: 255, 248, 240;
+  --background-start-rgb: 10, 14, 12;
+  --gold: #f0c14b;
+  --crimson: #e23b2f;
+  --ember: #ff7a3c;
+  --felt: #0d3b2e;
+  --ink: #0a0e0c;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #0a0e0c;
 }
 
-/* Prevent CLS by ensuring images don't shift layout */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Footer: contain layout to reduce CLS from reflow */
 footer {
   contain: layout;
 }
 
-/* Prevent font-related layout shifts */
 * {
   font-family: inherit;
 }
 
-
-/* main: no forced min-height - prevents footer from shifting when main expands late */
-
-
-
 .download-btn {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.download-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3.5s linear infinite;
+  pointer-events: none;
 }
 
 .download-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
 }
 
 .download-btn:hover .download-icon {
@@ -54,7 +60,8 @@ footer {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -62,25 +69,133 @@ footer {
   }
 }
 
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
-.stat-card {
-  background: rgba(10, 16, 41, 0.8);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
+.sky-panel {
+  background: linear-gradient(165deg, rgba(18, 32, 28, 0.95), rgba(10, 14, 12, 0.98));
+  border: 1px solid rgba(240, 193, 75, 0.22);
+  border-radius: 1.25rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
-.stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.sky-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 193, 75, 0.4);
+  background: linear-gradient(90deg, rgba(240, 193, 75, 0.15), rgba(226, 59, 47, 0.12));
+  color: #f0c14b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-/* Prevent layout shift by ensuring content takes up space */
+.prose-sky h2 {
+  position: relative;
+  color: #fff8f0;
+  font-weight: 800;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #f0c14b;
+}
+
+.prose-sky h3 {
+  color: #f0c14b;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-sky p,
+.prose-sky li {
+  color: rgba(255, 248, 240, 0.82);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.prose-sky a {
+  color: #f0c14b;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-sky a:hover {
+  color: #ff7a3c;
+}
+
+.apk-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.apk-table th,
+.apk-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(240, 193, 75, 0.12);
+  text-align: left;
+}
+
+.apk-table th {
+  width: 42%;
+  color: rgba(255, 248, 240, 0.55);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.apk-table td {
+  color: #fff8f0;
+  font-weight: 600;
+}
+
+.apk-table tr:last-child th,
+.apk-table tr:last-child td {
+  border-bottom: none;
+}
+
+.toc-link {
+  display: block;
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 248, 240, 0.65);
+  transition: all 0.2s ease;
+}
+
+.toc-link:hover {
+  color: #f0c14b;
+  background: rgba(240, 193, 75, 0.08);
+}
+
+.felt-band {
+  background:
+    radial-gradient(ellipse 80% 100% at 50% 0%, rgba(240, 193, 75, 0.12), transparent 55%),
+    linear-gradient(180deg, #0f2920 0%, #0a0e0c 100%);
+  border-top: 1px solid rgba(240, 193, 75, 0.15);
+  border-bottom: 1px solid rgba(240, 193, 75, 0.15);
+}
+
 .stars-bg {
   pointer-events: none;
-} 
+  background-image:
+    radial-gradient(1px 1px at 18% 28%, rgba(240, 193, 75, 0.5), transparent),
+    radial-gradient(1px 1px at 72% 18%, rgba(255, 248, 240, 0.3), transparent),
+    radial-gradient(1.5px 1.5px at 42% 72%, rgba(226, 59, 47, 0.35), transparent),
+    radial-gradient(1px 1px at 88% 62%, rgba(240, 193, 75, 0.35), transparent);
+}
+
+.section-anchor {
+  scroll-margin-top: 5.5rem;
+}

@@ -1,6 +1,4 @@
-import { imageObjectLicensing } from "@/lib/schemaImageLicensing";
-
-const BASE = "https://cardrummyapp.com.pk";
+import { imageObjectLicensing, SITE_ORIGIN } from "@/lib/schemaImageLicensing";
 
 function safeJsonLd(obj: object): string {
   return JSON.stringify(obj).replace(/</g, "\\u003c");
@@ -9,72 +7,69 @@ function safeJsonLd(obj: object): string {
 type BlogPostSchemaProps = {
   title: string;
   description: string;
-  slug: string;
+  /** Full canonical URL or path like /blog/slug */
+  url?: string;
+  /** Legacy slug without /blog/ prefix */
+  slug?: string;
   datePublished: string;
   dateModified?: string;
   image?: string;
   breadcrumbOnly?: boolean;
-  /** Key summary or first 2-3 paragraphs for AI parsing and articleBody */
   articleBody?: string;
 };
 
 export default function BlogPostSchema({
   title,
   description,
+  url,
   slug,
   datePublished,
   dateModified,
-  image = `${BASE}/card-rummy.webp`,
+  image = `${SITE_ORIGIN}/teen-patti-sky.webp`,
   breadcrumbOnly = false,
   articleBody,
 }: BlogPostSchemaProps) {
-  const url = `${BASE}/blog/${slug}`;
-  const breadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE}/blog` },
-      { "@type": "ListItem", position: 3, name: title, item: url },
-    ],
-  };
+  const resolvedUrl =
+    url?.startsWith("http")
+      ? url
+      : url
+        ? `${SITE_ORIGIN}${url}`
+        : `${SITE_ORIGIN}/blog/${slug}`;
+
   const article: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `${url}#article`,
+    "@id": `${resolvedUrl}#article`,
     headline: title,
     description,
-    url,
+    url: resolvedUrl,
     image,
-    author: { "@type": "Organization", name: "Card Rummy", url: BASE },
+    author: { "@type": "Organization", name: "Teen Patti Sky", url: SITE_ORIGIN },
     publisher: {
       "@type": "Organization",
-      name: "Card Rummy",
+      name: "Teen Patti Sky",
       logo: {
         "@type": "ImageObject",
-        url: `${BASE}/card-rummy.webp`,
+        url: `${SITE_ORIGIN}/teen-patti-sky.webp`,
         ...imageObjectLicensing,
-        creditText: "Card Rummy logo",
+        creditText: "Teen Patti Sky logo",
       },
     },
     datePublished,
     dateModified: dateModified || datePublished,
-    mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    inLanguage: "en-US",
+    mainEntityOfPage: { "@type": "WebPage", "@id": resolvedUrl },
+    inLanguage: "en-PK",
     ...(articleBody && { articleBody }),
   };
+
+  if (breadcrumbOnly) return null;
+
   return (
     <div suppressHydrationWarning style={{ display: "contents" }}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(article) }}
       />
-      {!breadcrumbOnly && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: safeJsonLd(article) }}
-        />
-      )}
     </div>
   );
 }

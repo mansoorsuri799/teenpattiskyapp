@@ -27,62 +27,35 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // /about was indexed by Google but the real page is /about-us
-      {
-        source: '/about',
-        destination: '/about-us',
-        permanent: true,
-      },
-      {
-        source: '/blog/create-account-login',
-        destination: '/blog/create-card-rummy-account-and-login',
-        permanent: true,
-      },
-      // Malformed URLs Google crawled — send them home
-      {
-        source: '/\\$',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/\\&',
-        destination: '/',
-        permanent: true,
-      },
-      {
-        source: '/og-image.webp',
-        destination: '/feature/og-image.webp',
-        permanent: true,
-      },
-      {
-        source: '/og-image-square.webp',
-        destination: '/feature/og-image-square.webp',
-        permanent: true,
-      },
-      {
-        source: '/twitter-card.webp',
-        destination: '/feature/twitter-card.webp',
-        permanent: true,
-      },
-      {
-        source: '/card-rummy-logo.webp',
-        destination: '/card-rummy.webp',
-        permanent: true,
-      },
+      { source: '/about', destination: '/about-us', permanent: true },
+      { source: '/download-card-rummy', destination: '/download-teen-patti-sky', permanent: true },
+      { source: '/deposit-money-in-card-rummy', destination: '/deposit-money-in-teen-patti-sky', permanent: true },
+      { source: '/withdraw-money-from-card-rummy', destination: '/withdraw-money-from-teen-patti-sky', permanent: true },
+      { source: '/card-rummy-for-pc', destination: '/teen-patti-sky-for-pc', permanent: true },
+      { source: '/blog/create-account-login', destination: '/blog/teen-patti-sky-account-login', permanent: true },
+      { source: '/blog/create-card-rummy-account-and-login', destination: '/blog/teen-patti-sky-account-login', permanent: true },
+      { source: '/blog/is-card-rummy-safe-legal-pakistan', destination: '/blog/how-to-contact-teen-patti-sky-customer-support', permanent: true },
+      { source: '/blog/is-card-rummy-real-or-fake', destination: '/blog/how-to-contact-teen-patti-sky-customer-support', permanent: true },
+      { source: '/blog/is-teen-patti-sky-safe-pakistan', destination: '/blog/how-to-contact-teen-patti-sky-customer-support', permanent: true },
+      { source: '/blog/tips-to-win-big-in-card-rummy', destination: '/blog/how-to-win-big-in-teen-patti-sky', permanent: true },
+      { source: '/blog/card-rummy-bonuses-vip-guide', destination: '/blog/teen-patti-sky-bonuses-referral', permanent: true },
+      { source: '/blog/card-rummy-referral-program', destination: '/blog/teen-patti-sky-bonuses-referral', permanent: true },
+      { source: '/blog/ips-exceed-issue-card-rummy-how-to-fix', destination: '/blog/teen-patti-sky-ip-limit-exceed-fix', permanent: true },
+      { source: '/\\$', destination: '/', permanent: true },
+      { source: '/\\&', destination: '/', permanent: true },
+      { source: '/og-image.webp', destination: '/feature/og-image.png', permanent: true },
+      { source: '/og-image-square.webp', destination: '/feature/og-image-square.webp', permanent: true },
+      { source: '/twitter-card.webp', destination: '/feature/twitter-card.webp', permanent: true },
+      { source: '/card-rummy-logo.webp', destination: '/teen-patti-sky.webp', permanent: true },
+      { source: '/card-rummy.webp', destination: '/teen-patti-sky.webp', permanent: true },
     ];
   },
 
-  // Optimize static file serving
   async rewrites() {
     return [
       {
         source: '/.well-known/:path*',
         destination: '/public/.well-known/:path*',
-      },
-      // Redirect old 3Patti Blue logo to Card Rummy logo
-      {
-        source: '/3-patti-blue-logo.webp',
-        destination: '/card-rummy.webp',
       },
     ];
   },

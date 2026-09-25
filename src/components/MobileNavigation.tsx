@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useEffect, useTransition } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useMobileMenu } from './MobileMenuProvider';
 import CtaButton from './CtaButton';
+import { APP_DETAILS } from '@/lib/appFacts';
 
 type NavItem = {
   href: string;
@@ -19,7 +21,7 @@ type NavSection = {
 };
 
 const ChevronRight = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-gray-600" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 text-gold/40" aria-hidden="true">
     <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
   </svg>
 );
@@ -38,7 +40,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/download-card-rummy',
+        href: '/download-teen-patti-sky',
         label: 'Download',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -52,7 +54,7 @@ const navSections: NavSection[] = [
     title: 'GUIDES',
     items: [
       {
-        href: '/deposit-money-in-card-rummy',
+        href: '/deposit-money-in-teen-patti-sky',
         label: 'Deposit Guide',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -61,7 +63,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/withdraw-money-from-card-rummy',
+        href: '/withdraw-money-from-teen-patti-sky',
         label: 'Withdraw Guide',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -70,7 +72,7 @@ const navSections: NavSection[] = [
         ),
       },
       {
-        href: '/card-rummy-for-pc',
+        href: '/teen-patti-sky-for-pc',
         label: 'PC Version',
         icon: (
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
@@ -110,31 +112,18 @@ const navSections: NavSection[] = [
           </svg>
         ),
       },
+      {
+        href: '/privacy',
+        label: 'Privacy',
+        icon: (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+          </svg>
+        ),
+      },
     ],
   },
 ];
-
-function MenuButton({ onClick, isOpen }: { onClick: () => void; isOpen?: boolean }) {
-  return (
-    <button
-      onClick={onClick}
-      className="flex items-center text-accent p-1"
-      aria-label={isOpen ? 'Close menu' : 'Open menu'}
-      aria-expanded={isOpen}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        className="w-8 h-8"
-        aria-hidden="true"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  );
-}
 
 export default function MobileNavigation() {
   const { isOpen, setIsOpen } = useMobileMenu();
@@ -151,13 +140,24 @@ export default function MobileNavigation() {
     setMounted(true);
   }, []);
 
+  // Close menu on route change
+  useEffect(() => {
+    startTransition(() => setIsOpen(false));
+  }, [pathname, setIsOpen, startTransition]);
+
   useEffect(() => {
     if (!isOpen) return;
+    const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    return () => {
-      document.body.style.overflow = '';
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') startTransition(() => setIsOpen(false));
     };
-  }, [isOpen]);
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [isOpen, setIsOpen, startTransition]);
 
   const toggleMenu = () => {
     startTransition(() => setIsOpen(!isOpen));
@@ -167,107 +167,118 @@ export default function MobileNavigation() {
     startTransition(() => setIsOpen(false));
   };
 
-  if (!mounted) {
-    return (
-      <div className="md:hidden">
-        <MenuButton onClick={() => {}} />
-      </div>
-    );
-  }
+  const menuPanel =
+    mounted && isOpen
+      ? createPortal(
+          <div
+            className="fixed inset-0 z-[100] flex flex-col bg-[#0a0e0c] lg:hidden"
+            id="mobile-nav-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation"
+          >
+            <div className="flex justify-between items-center px-5 py-4 border-b border-gold/20 bg-secondary/80 backdrop-blur-sm">
+              <Link href="/" className="flex items-center gap-3 min-w-0" onClick={closeMenu}>
+                <div className="relative w-9 h-9 flex-shrink-0 rounded-lg overflow-hidden ring-1 ring-gold/40">
+                  <Image
+                    src="/teen-patti-sky.webp"
+                    alt="Teen Patti Sky logo"
+                    fill
+                    sizes="36px"
+                    className="object-cover"
+                  />
+                </div>
+                <span className="font-display text-gold text-lg font-bold tracking-tight truncate">
+                  Teen Patti <span className="text-crimson">Sky</span>
+                </span>
+              </Link>
+              <button
+                type="button"
+                onClick={closeMenu}
+                className="flex items-center justify-center w-11 h-11 rounded-full bg-panel text-cream hover:bg-crimson/25 transition-colors flex-shrink-0"
+                aria-label="Close menu"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="relative flex-1 overflow-y-auto overscroll-contain">
+              <div className="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-gold via-crimson to-ember" aria-hidden="true" />
+              <nav className="px-5 py-2 pb-6">
+                {navSections.map((section) => (
+                  <div key={section.title} className="mb-1">
+                    <p className="text-[11px] font-semibold tracking-widest text-gold/55 uppercase px-1 pt-5 pb-2">
+                      {section.title}
+                    </p>
+                    <ul className="space-y-0.5">
+                      {section.items.map((item) => {
+                        const active = isActive(item.href);
+                        return (
+                          <li key={item.href}>
+                            <Link
+                              href={item.href}
+                              onClick={closeMenu}
+                              className={`flex items-center gap-4 px-2 py-3.5 rounded-lg transition-colors group ${
+                                active
+                                  ? 'text-gold bg-gold/10'
+                                  : 'text-cream hover:text-gold hover:bg-white/5'
+                              }`}
+                            >
+                              <span
+                                className={`transition-colors flex-shrink-0 ${
+                                  active ? 'text-gold' : 'text-cream/50 group-hover:text-gold'
+                                }`}
+                              >
+                                {item.icon}
+                              </span>
+                              <span className="flex-1 text-[15px] font-medium">{item.label}</span>
+                              <ChevronRight />
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ))}
+              </nav>
+            </div>
+
+            <div className="px-5 pt-4 pb-8 border-t border-gold/20 flex flex-col items-center bg-secondary/60 safe-area-pb">
+              <CtaButton onClick={closeMenu} ariaLabel="Download Teen Patti Sky app for Android">
+                DOWNLOAD NOW
+              </CtaButton>
+              <p className="text-center text-cream/45 text-xs mt-3">
+                {APP_DETAILS.size} · {APP_DETAILS.android} · {APP_DETAILS.version}
+              </p>
+            </div>
+          </div>,
+          document.body
+        )
+      : null;
 
   return (
-    <div className="md:hidden">
-      <MenuButton onClick={toggleMenu} isOpen={isOpen} />
-
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-[#080A21]">
-          {/* Header */}
-          <div className="flex justify-between items-center px-5 py-4 border-b border-gray-800/80">
-            <Link href="/" className="flex items-center gap-3" onClick={closeMenu}>
-              <div className="relative w-9 h-9 flex-shrink-0 rounded-lg overflow-hidden">
-                <Image
-                  src="/card-rummy.webp"
-                  alt="Card Rummy Logo"
-                  fill
-                  sizes="36px"
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              <span className="text-white text-lg font-bold tracking-tight">Card Rummy</span>
-            </Link>
-            <button
-              onClick={closeMenu}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1a1f35] text-white hover:bg-[#252b45] transition-colors"
-              aria-label="Close menu"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-5 h-5"
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Nav sections */}
-          <div className="relative flex-1 overflow-y-auto">
-            <div className="absolute right-0 top-0 bottom-0 w-1 bg-[#0BA5E9]" aria-hidden="true" />
-
-            <nav className="px-5 py-2 pb-6">
-              {navSections.map((section) => (
-                <div key={section.title} className="mb-2">
-                  <p className="text-[11px] font-semibold tracking-widest text-gray-500 uppercase px-1 pt-5 pb-2">
-                    {section.title}
-                  </p>
-                  <ul className="space-y-0.5">
-                    {section.items.map((item) => {
-                      const active = isActive(item.href);
-                      return (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          onClick={closeMenu}
-                          className={`flex items-center gap-4 px-1 py-3.5 transition-colors group ${
-                            active
-                              ? 'text-accent'
-                              : 'text-white hover:text-accent'
-                          }`}
-                        >
-                          <span className={`transition-colors flex-shrink-0 ${
-                            active
-                              ? 'text-accent'
-                              : 'text-gray-400 group-hover:text-accent'
-                          }`}>
-                            {item.icon}
-                          </span>
-                          <span className="flex-1 text-[15px] font-medium">{item.label}</span>
-                          <ChevronRight />
-                        </Link>
-                      </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
-            </nav>
-          </div>
-
-          {/* Footer CTA */}
-          <div className="px-5 pt-4 pb-8 border-t border-gray-800/80 flex flex-col items-center">
-            <CtaButton onClick={closeMenu} ariaLabel="Download Card Rummy app for Android">
-              DOWNLOAD NOW
-            </CtaButton>
-            <p className="text-center text-gray-500 text-xs mt-3">
-              49MB · Android 5.0+ · V1.231 (2026 Update)
-            </p>
-          </div>
-        </div>
-      )}
+    <div className="lg:hidden flex items-center">
+      <button
+        type="button"
+        onClick={toggleMenu}
+        className="relative z-[101] flex items-center justify-center w-11 h-11 -mr-1 text-gold rounded-lg hover:bg-gold/10 transition-colors"
+        aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isOpen}
+        aria-controls="mobile-nav-menu"
+      >
+        {isOpen ? (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-7 h-7" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
+      </button>
+      {menuPanel}
     </div>
   );
 }

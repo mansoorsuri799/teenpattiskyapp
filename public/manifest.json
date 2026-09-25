@@ -1,22 +1,33 @@
 {
-  "name": "Card Rummy",
-  "short_name": "Card Rummy",
-  "description": "Pakistan's premier card gaming platform offering Teen Patti, Rummy, Dragon vs Tiger and more. Earn real cash rewards!",
+  "name": "Teen Patti Sky",
+  "short_name": "Teen Patti Sky",
+  "description": "Teen Patti Sky APK guides for Pakistan — download, JazzCash & EasyPaisa deposits, withdrawals, bonuses.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#06091F",
-  "theme_color": "#06091F",
+  "background_color": "#120805",
+  "theme_color": "#120805",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "256x256",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "/card-rummy.webp",
+      "src": "/teen-patti-sky.webp",
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64 128x128 256x256",
+      "type": "image/x-icon"
     }
   ]
-} 
+}
