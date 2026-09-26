@@ -14,12 +14,12 @@ import CtaButton from "@/components/CtaButton";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "3 Patti Sky APK v2.5.0 Pakistan – Free Android Download 2026",
+    absolute: "3 Patti Sky APK v1.199(1) Pakistan – Free Android Download 2026",
   },
   description:
-    "Download 3 Patti Sky (Teen Patti Sky) APK v2.5.0 for Android in Pakistan. JazzCash & EasyPaisa, daily bonuses, referral agent rewards, Roulette, Mines, Dragon Tiger & more.",
+    "Download 3 Patti Sky (Teen Patti Sky) APK v1.199(1) for Android in Pakistan. JazzCash & EasyPaisa, daily bonuses, referral agent rewards, Roulette, Mines, Dragon Tiger & more.",
   openGraph: {
-    title: "3 Patti Sky APK v2.5.0 Pakistan – Free Android Download 2026",
+    title: "3 Patti Sky APK v1.199(1) Pakistan – Free Android Download 2026",
     description:
       "Official Teen Patti Sky / 3 Patti Sky guide: install APK, claim bonuses, deposit & withdraw with JazzCash and EasyPaisa.",
     url: "https://teenpattiskyapp.com.pk",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "3 Patti Sky APK v2.5.0 Pakistan – Free Android Download 2026",
+    title: "3 Patti Sky APK v1.199(1) Pakistan – Free Android Download 2026",
     description:
       "Install Teen Patti Sky on Android. Live tables, VIP rooms, JazzCash & EasyPaisa cashouts.",
     images: ["https://teenpattiskyapp.com.pk/feature/twitter-card.webp"],
@@ -64,7 +64,7 @@ const toc = [
   { id: "pc", label: "PC Version" },
   { id: "register", label: "Register" },
   { id: "login", label: "Login & Password" },
-  { id: "whats-new", label: "What's New v2.5.0" },
+  { id: "whats-new", label: "What's New v1.199(1)" },
   { id: "payments", label: "Deposit & Withdraw" },
   { id: "compare", label: "vs Other Apps" },
   { id: "safety", label: "Safe, Legal & Legit" },
@@ -246,7 +246,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
             <div>
               <div className="flex flex-wrap gap-2 mb-5">
-                <span className="sky-chip">v2.5.0 · 2026</span>
+                <span className="sky-chip">v1.199(1) · 2026</span>
                 <span className="sky-chip">Pakistan</span>
                 <span className="sky-chip">JazzCash · EasyPaisa</span>
               </div>
@@ -641,9 +641,9 @@ export default function Home() {
             new password, and sign in again. Never share OTPs with “agents” on social apps.
           </p>
 
-          <SectionTitle id="whats-new">What&apos;s New in Version v2.5.0 (2026)?</SectionTitle>
+          <SectionTitle id="whats-new">What&apos;s New in Version v1.199(1) (2026)?</SectionTitle>
           <p>
-            The 2026 v2.5.0 line focuses on faster loads, tighter security for personal data, broader Android
+            The 2026 v1.199(1) line focuses on faster loads, tighter security for personal data, broader Android
             compatibility, reward-system polish, and a cleaner UI for joining tables. Beginners and veterans both benefit
             from keeping the latest package installed.
           </p>
@@ -807,7 +807,7 @@ export default function Home() {
       <section className="felt-band px-4 md:px-8 py-14">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-3xl font-extrabold text-cream mb-3">
-            Download 3 Patti Sky Game — Android v2.5.0
+            Download 3 Patti Sky Game — Android v1.199(1)
           </h2>
           <p className="text-cream/70 mb-6">
             Free APK · JazzCash & EasyPaisa · Daily bonuses · Live Teen Patti tables

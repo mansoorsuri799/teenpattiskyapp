@@ -40,11 +40,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://teenpattiskyapp.com.pk"),
   title: {
-    default: "3 Patti Sky APK v2.5.0 Pakistan – Free Android Download 2026",
+    default: "3 Patti Sky APK v1.199(1) Pakistan – Free Android Download 2026",
     template: "%s | Teen Patti Sky",
   },
   description:
-    "Download 3 Patti Sky (Teen Patti Sky) APK v2.5.0 for Pakistan. JazzCash & EasyPaisa, daily bonuses, referral rewards, Roulette, Mines, Dragon Tiger.",
+    "Download 3 Patti Sky (Teen Patti Sky) APK v1.199(1) for Pakistan. JazzCash & EasyPaisa, daily bonuses, referral rewards, Roulette, Mines, Dragon Tiger.",
   keywords: [
     "Teen Patti Sky",
     "teen patti sky apk",

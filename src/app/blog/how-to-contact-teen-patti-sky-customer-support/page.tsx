@@ -83,7 +83,7 @@ export default function ContactSupportBlog() {
         <ul className="list-disc pl-5 space-y-2">
           <li>User ID / nickname shown in the app</li>
           <li>Registered mobile number</li>
-          <li>Device model and app version (e.g. v2.5.0)</li>
+          <li>Device model and app version (e.g. v1.199(1))</li>
           <li>Screenshots of error messages (IP limit, failed withdraw, etc.)</li>
           <li>Payment reference for deposit or withdrawal cases</li>
         </ul>

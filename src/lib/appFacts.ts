@@ -35,7 +35,7 @@ export const BRAND = {
 } as const;
 
 export const APP_DETAILS = {
-  version: "v2.5.0",
+  version: "v1.199(1)",
   size: "80 MB",
   android: "Android 5.0+",
   category: "Card Game",
